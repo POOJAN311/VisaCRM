@@ -63,8 +63,7 @@ class Home extends BaseController
                     } else if ($admin['role'] == 'counsellor') {
                         return redirect()->to('counsellor/dashboard');
                     } else if ($admin['role'] == 'receptionist') {
-                        echo $admin['role'];
-                        exit;
+                        return redirect()->to('receptionist/dashboard');
                     } else if ($admin['role'] == 'student') {
                         return redirect()->to('student/dashboard');
                     } else {
@@ -198,5 +197,14 @@ class Home extends BaseController
     public function UniversityList()
     {
         return view('admin/UniversityList');
+    }
+    //receptionist
+    public function receptionist_dashboard()
+    {
+        return view('receptionist/dashboard');
+    }
+    public function receptionistLeave()
+    {
+        return view('receptionist/leave');
     }
 }

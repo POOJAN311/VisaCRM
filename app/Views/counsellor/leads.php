@@ -61,14 +61,6 @@
                 </p>
               </a>
             </li>
-            <!-- <li class="nav-item">
-              <a href="/universityApplication.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  College Search
-                </p>
-              </a>
-            </li> -->
             </li>
             <li class="nav-item">
               <a href="/counsellor/CollegeSearch" class="nav-link">
@@ -115,6 +107,14 @@
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Leave
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/counsellor/StudentSearch" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Student search
                 </p>
               </a>
             </li>

@@ -160,6 +160,10 @@ class Home extends BaseController
     {
         return view('counsellor/visadetails');
     }
+    public function StudentSearch()
+    {
+        return view('counsellor/StudentSearch');
+    }
 
 
     // student

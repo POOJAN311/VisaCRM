@@ -46,7 +46,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <<aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="/counsellor/dashboard" class="brand-link">
         <img src="<?php echo base_url() ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -134,6 +134,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/counsellor/StudentSearch" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Student search
+                </p>
+              </a>
+            </li>
 
           </ul>
         </nav>
@@ -142,510 +150,510 @@
       <!-- /.sidebar -->
     </aside>
 
-        <div class="content-wrapper">
-            <div class="container">
-                <br>
-                <h2>General Information</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="firstname">First Name</label>
-                                                    <input type="text" class="form-control" id="firstname" placeholder="Enter First name">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="lastname">Last Name</label>
-                                                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Select</label>
-                                            <select class="form-control">
-                                                <option>Application</option>
-                                                <option>Coaching</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" class="form-control" id="phone" placeholder="Enter your number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Date:</label>
-                                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-                                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <textarea class="form-control" rows="5" placeholder="Enter your address..."></textarea>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="">Gender</label>
-                                                <div class="form-group form-inline">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="radio1">
-                                                        <label class="form-check-label">Male</label>
+            <div class="content-wrapper">
+                <div class="container">
+                    <br>
+                    <h2>General Information</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="firstname">First Name</label>
+                                                        <input type="text" class="form-control" id="firstname" placeholder="Enter First name">
                                                     </div>
-                                                    &nbsp; &nbsp;
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="radio1">
-                                                        <label class="form-check-label">Female</label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="lastname">Last Name</label>
+                                                        <input type="text" class="form-control" id="lastname" placeholder="Enter Last name">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Date of Birth:</label>
-                                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-                                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                                            <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Select</label>
+                                                <select class="form-control">
+                                                    <option>Application</option>
+                                                    <option>Coaching</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phone">Phone</label>
+                                                <input type="text" class="form-control" id="phone" placeholder="Enter your number">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Date:</label>
+                                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                                    <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
+                                                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <textarea class="form-control" rows="5" placeholder="Enter your address..."></textarea>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="">Gender</label>
+                                                    <div class="form-group form-inline">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="radio1">
+                                                            <label class="form-check-label">Male</label>
+                                                        </div>
+                                                        &nbsp; &nbsp;
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="radio1">
+                                                            <label class="form-check-label">Female</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Date of Birth:</label>
+                                                        <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                                            <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
+                                                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                                <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
+
+                            </form>
+
+                            <div class="card-footer">
+                                <button class="btn btn-outline-success" type="submit">Submit</button>
                             </div>
 
-                        </form>
-
-                        <div class="card-footer">
-                            <button class="btn btn-outline-success" type="submit">Submit</button>
                         </div>
-
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-default">
-                            <div class="card-body p-0">
-                                <div class="bs-stepper">
-                                    <div class="bs-stepper-header" role="tablist">
-                                        <!-- your steps here -->
-                                        <div class="step" data-target="#logins-part">
-                                            <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-                                                <span class="bs-stepper-circle">1</span>
-                                                <span class="bs-stepper-label">Education Details</span>
-                                            </button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-default">
+                                <div class="card-body p-0">
+                                    <div class="bs-stepper">
+                                        <div class="bs-stepper-header" role="tablist">
+                                            <!-- your steps here -->
+                                            <div class="step" data-target="#logins-part">
+                                                <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+                                                    <span class="bs-stepper-circle">1</span>
+                                                    <span class="bs-stepper-label">Education Details</span>
+                                                </button>
+                                            </div>
+                                            <div class="line"></div>
+                                            <div class="step" data-target="#expirence-part">
+                                                <button type="button" class="step-trigger" role="tab" aria-controls="expirence-part" id="expirence-part-trigger">
+                                                    <span class="bs-stepper-circle">2</span>
+                                                    <span class="bs-stepper-label">Work Experience</span>
+                                                </button>
+                                            </div>
+                                            <div class="line"></div>
+                                            <div class="step" data-target="#country-part">
+                                                <button type="button" class="step-trigger" role="tab" aria-controls="country-part" id="country-part-trigger">
+                                                    <span class="bs-stepper-circle">3</span>
+                                                    <span class="bs-stepper-label">Country Selection</span>
+                                                </button>
+                                            </div>
+                                            <div class="line"></div>
+                                            <div class="step" data-target="#score-part">
+                                                <button type="button" class="step-trigger" role="tab" aria-controls="score-part" id="score-part-trigger">
+                                                    <span class="bs-stepper-circle">4</span>
+                                                    <span class="bs-stepper-label">Score</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="line"></div>
-                                        <div class="step" data-target="#expirence-part">
-                                            <button type="button" class="step-trigger" role="tab" aria-controls="expirence-part" id="expirence-part-trigger">
-                                                <span class="bs-stepper-circle">2</span>
-                                                <span class="bs-stepper-label">Work Experience</span>
-                                            </button>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="step" data-target="#country-part">
-                                            <button type="button" class="step-trigger" role="tab" aria-controls="country-part" id="country-part-trigger">
-                                                <span class="bs-stepper-circle">3</span>
-                                                <span class="bs-stepper-label">Country Selection</span>
-                                            </button>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="step" data-target="#score-part">
-                                            <button type="button" class="step-trigger" role="tab" aria-controls="score-part" id="score-part-trigger">
-                                                <span class="bs-stepper-circle">4</span>
-                                                <span class="bs-stepper-label">Score</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="bs-stepper-content">
-                                        <!-- your steps content here -->
-                                        <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
-                                            <form action="">
-                                                <div class="card-body">
-                                                    <h2>SCHOOL DETAILS</h2>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label class="col-md-3">10th
-                                                                    Score</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="">Your Current Status in
-                                                                    12th</label>
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio1">
-                                                                    <label class="form-check-label">Still
-                                                                        Pursing</label>
-                                                                </div>
-                                                                &nbsp; &nbsp;
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio1">
-                                                                    <label class="form-check-label">Completed</label>
-                                                                </div>
-                                                            </div>
-                                                            <br><br>
-                                                            <div class="form-group">
-                                                                <label class="col-md-3">Passing Year of
-                                                                    10th</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label>12th
-                                                                    Score (if pursing then average
-                                                                    score)</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="">Your 12th Board</label>
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio1">
-                                                                    <label class="form-check-label">CBSE
-                                                                        Board</label>
-                                                                </div>
-                                                                &nbsp; &nbsp;
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio1">
-                                                                    <label class="form-check-label">ICSE
-                                                                        Board</label>
-                                                                </div>
-                                                                &nbsp;&nbsp;
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="radio" name="radio1">
-                                                                    <label class="form-check-label">State
-                                                                        Board</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-md-3">Passing Year of
-                                                                    12th</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                    <h2>COLLEGE DETAILS</h2>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <form action="">
+                                        <div class="bs-stepper-content">
+                                            <!-- your steps content here -->
+                                            <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+                                                <form action="">
+                                                    <div class="card-body">
+                                                        <h2>SCHOOL DETAILS</h2>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label class="col-md-3">College
-                                                                        name</label>
+                                                                    <label class="col-md-3">10th
+                                                                        Score</label>
                                                                     <div class="col-md-9">
                                                                         <input type="text" class="form-control">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="col-md-3">Course
-                                                                        name</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label class="col-md-3">Average CGPA</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-md-5">Last Semester
-                                                                    SGPA</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-                                        </div>
-                                        <div id="expirence-part" class="content" role="tabpanel" aria-labelledby="expirence-part-trigger">
-                                            <form class="form-horizontal">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="col-7">
-                                                            <div class="form-group row">
-                                                                <label for="inputEmail3" class="col-md-2 col-form-label">Company
-                                                                    name</label>
-                                                                <div class="col-md-10">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label for="inputPassword3" class="col-md-2">Experience</label>
-                                                                <div class="col-md-10">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-
-
-                                                            <div class="form-group">
-                                                                <label for="">Job Type</label>
-                                                                <div class="form-group form-inline">
+                                                                    <label for="">Your Current Status in
+                                                                        12th</label>
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio" name="radio1">
-                                                                        <label class="form-check-label">Part-Time</label>
+                                                                        <label class="form-check-label">Still
+                                                                            Pursing</label>
                                                                     </div>
                                                                     &nbsp; &nbsp;
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="radio" name="radio1">
-                                                                        <label class="form-check-label">Full-Time</label>
+                                                                        <label class="form-check-label">Completed</label>
+                                                                    </div>
+                                                                </div>
+                                                                <br><br>
+                                                                <div class="form-group">
+                                                                    <label class="col-md-3">Passing Year of
+                                                                        10th</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" class="form-control">
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                                            <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-                                        </div>
-                                        <div id="country-part" class="content" role="tabpanel" aria-labelledby="country-part-trigger">
-                                            <form class="form-horizontal">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <div class="container">
-                                                            <h2>Country Selection</h2>
-                                                            <div class="row">
-                                                                <div class="col-md-6">Select the country
-                                                                    <select class="form-control" name="country">
-                                                                        <option value="">USA</option>
-                                                                        <option value="">Cananda</option>
-                                                                        <option value="">UK</option>
-                                                                    </select>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label>12th
+                                                                        Score (if pursing then average
+                                                                        score)</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                    <div class="row">
-                                                        <div class="container">
-                                                            <h2>Type of Visa</h2>
-                                                            <div class="row">
-                                                                <div class="col-md-6">Select visa type
-                                                                    <select class="form-control" name="country">
-                                                                        <option value="">Tourist Visa
-                                                                        </option>
-                                                                        <option value="">Study Visa</option>
-                                                                        <option value="">Buisness Visa
-                                                                        </option>
-                                                                        <option value="">Employment Visa
-                                                                        </option>
-                                                                        <option value="">Transport</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                    <div class="row">
-                                                        <div class="container">
-                                                            <label>Applied Again</label>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">Your 12th Board</label>
                                                                     <div class="form-check">
-                                                                        <input class="form-check-input" type="checkbox">
-                                                                        <label class="form-check-label">Have
-                                                                            you applied before for any
-                                                                            country?</label>
+                                                                        <input class="form-check-input" type="radio" name="radio1">
+                                                                        <label class="form-check-label">CBSE
+                                                                            Board</label>
+                                                                    </div>
+                                                                    &nbsp; &nbsp;
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="radio1">
+                                                                        <label class="form-check-label">ICSE
+                                                                            Board</label>
+                                                                    </div>
+                                                                    &nbsp;&nbsp;
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="radio1">
+                                                                        <label class="form-check-label">State
+                                                                            Board</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-md-3">Passing Year of
+                                                                        12th</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" class="form-control">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <br>
-                                                        <div class="container">
-                                                            <label>If yes then please fill</label>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
+                                                        <h2>COLLEGE DETAILS</h2>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <form action="">
                                                                     <div class="form-group">
-                                                                        <label>Country
+                                                                        <label class="col-md-3">College
                                                                             name</label>
-                                                                        <div>
-                                                                            <input type="text" class="form-control" placeholder="Enter country name">
+                                                                        <div class="col-md-9">
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-3">Course
+                                                                            name</label>
+                                                                        <div class="col-md-9">
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="col-md-3">Average CGPA</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col-md-5">Last Semester
+                                                                        SGPA</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+                                            </div>
+                                            <div id="expirence-part" class="content" role="tabpanel" aria-labelledby="expirence-part-trigger">
+                                                <form class="form-horizontal">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-7">
+                                                                <div class="form-group row">
+                                                                    <label for="inputEmail3" class="col-md-2 col-form-label">Company
+                                                                        name</label>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label for="inputPassword3" class="col-md-2">Experience</label>
+                                                                    <div class="col-md-10">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                    <label for="">Job Type</label>
+                                                                    <div class="form-group form-inline">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="radio1">
+                                                                            <label class="form-check-label">Part-Time</label>
+                                                                        </div>
+                                                                        &nbsp; &nbsp;
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio" name="radio1">
+                                                                            <label class="form-check-label">Full-Time</label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </form>
-                                            <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                                            <button class="btn btn-primary" onclick="stepper.next()">Next</button>
-                                        </div>
-                                        <div id="score-part" class="content" role="tabpanel" aria-labelledby="score-part-trigger">
-                                            <form class="form-horizontal" action="">
-                                                <div class="row">
-                                                    <div class="container">
-                                                        <h2>IELTS SCORE</h2>
+                                                </form>
+                                                <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+                                                <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+                                            </div>
+                                            <div id="country-part" class="content" role="tabpanel" aria-labelledby="country-part-trigger">
+                                                <form class="form-horizontal">
+                                                    <div class="card-body">
                                                         <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox">
-                                                                    <label class="form-check-label">Have
-                                                                        you appeared for IELTS exam
-                                                                        before?</label>
+                                                            <div class="container">
+                                                                <h2>Country Selection</h2>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">Select the country
+                                                                        <select class="form-control" name="country">
+                                                                            <option value="">USA</option>
+                                                                            <option value="">Cananda</option>
+                                                                            <option value="">UK</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="container">
+                                                                <h2>Type of Visa</h2>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">Select visa type
+                                                                        <select class="form-control" name="country">
+                                                                            <option value="">Tourist Visa
+                                                                            </option>
+                                                                            <option value="">Study Visa</option>
+                                                                            <option value="">Buisness Visa
+                                                                            </option>
+                                                                            <option value="">Employment Visa
+                                                                            </option>
+                                                                            <option value="">Transport</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="container">
+                                                                <label>Applied Again</label>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="checkbox">
+                                                                            <label class="form-check-label">Have
+                                                                                you applied before for any
+                                                                                country?</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            <div class="container">
+                                                                <label>If yes then please fill</label>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label>Country
+                                                                                name</label>
+                                                                            <div>
+                                                                                <input type="text" class="form-control" placeholder="Enter country name">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+                                                <button class="btn btn-primary" onclick="stepper.next()">Next</button>
+                                            </div>
+                                            <div id="score-part" class="content" role="tabpanel" aria-labelledby="score-part-trigger">
+                                                <form class="form-horizontal" action="">
+                                                    <div class="row">
+                                                        <div class="container">
+                                                            <h2>IELTS SCORE</h2>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox">
+                                                                        <label class="form-check-label">Have
+                                                                            you appeared for IELTS exam
+                                                                            before?</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="container">
+                                                            <label>If yes then please fill yout score</label>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-2 col-form-label">Writing</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-2 col-form-label">Listening</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-2 col-form-label">Speaking</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-2 col-form-label">Reading</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-groupml ml-3">
+                                                                    <label>Overall</label>
+                                                                    <div>
+                                                                        <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <br>
-                                                    <div class="container">
-                                                        <label>If yes then please fill yout score</label>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label class="col-md-2 col-form-label">Writing</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="number" max="9" class="form-control" placeholder="0.0">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-md-2 col-form-label">Listening</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                    <div class="row">
+                                                        <div class="container">
+                                                            <h2>GRE SCORE</h2>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox">
+                                                                        <label class="form-check-label">Have
+                                                                            you appeared for GRE exam
+                                                                            before?</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label class="col-md-2 col-form-label">Speaking</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                        </div>
+                                                        <br>
+                                                        <div class="container">
+                                                            <label>If yes then please fill yout score</label>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>Verbal
+                                                                            Reasoning</label>
+                                                                        <div>
+                                                                            <input type="text" class="form-control" placeholder="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Quantitative
+                                                                            Reasoning</label>
+                                                                        <div>
+                                                                            <input type="text" class="form-control" placeholder="0">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-md-2 col-form-label">Reading</label>
-                                                                    <div class="col-md-10">
-                                                                        <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>Analytical
+                                                                            Reasoning</label>
+                                                                        <div>
+                                                                            <input type="text" class="form-control" placeholder="0">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-groupml ml-3">
-                                                                <label>Overall</label>
+                                                            <div class="form-group">
+                                                                <label>Overall Score</label>
                                                                 <div>
-                                                                    <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                    <input type="text" class="form-control" placeholder="0.0">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <br>
-                                                <div class="row">
-                                                    <div class="container">
-                                                        <h2>GRE SCORE</h2>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox">
-                                                                    <label class="form-check-label">Have
-                                                                        you appeared for GRE exam
-                                                                        before?</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                    <div class="container">
-                                                        <label>If yes then please fill yout score</label>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Verbal
-                                                                        Reasoning</label>
-                                                                    <div>
-                                                                        <input type="text" class="form-control" placeholder="0">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Quantitative
-                                                                        Reasoning</label>
-                                                                    <div>
-                                                                        <input type="text" class="form-control" placeholder="0">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Analytical
-                                                                        Reasoning</label>
-                                                                    <div>
-                                                                        <input type="text" class="form-control" placeholder="0">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Overall Score</label>
-                                                            <div>
-                                                                <input type="text" class="form-control" placeholder="0.0">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                                </form>
+                                                <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+                                                <button class="btn btn-primary" type="submit">Submit</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- /.card -->
                         </div>
-                        <!-- /.card -->
                     </div>
+                    <br>
+
                 </div>
-                <br>
-
             </div>
-        </div>
 
 
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.2.0
-            </div>
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights
-            reserved.
-        </footer>
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+                    <b>Version</b> 3.2.0
+                </div>
+                <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+                All rights
+                reserved.
+            </footer>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
     </div>
     <!-- /.control-sidebar -->
     <!-- /.control-sidebar -->

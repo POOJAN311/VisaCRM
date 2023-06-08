@@ -42,6 +42,7 @@ $routes->get('/counsellor/Leads', 'Home::counsellorLeads');
 $routes->get('/counsellor/Leave', 'Home::counsellorLeave');
 $routes->get('/counsellor/StudentInfo', 'Home::counsellorStudentInfo');
 $routes->get('/counsellor/VisaDetails', 'Home::counsellorVisaDetails');
+$routes->get('/counsellor/StudentSearch', 'Home::StudentSearch');
 
 
 // Student

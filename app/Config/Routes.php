@@ -57,8 +57,9 @@ $routes->get('/admin/CounsellorDetails', 'Home::CounsellorDetails');
 $routes->get('/admin/leaveApprove', 'Home::leaveApprove');
 $routes->get('/admin/AddUniversity', 'Home::AddUniversity');
 $routes->get('/admin/UniversityList', 'Home::UniversityList');
-
-
+// receptionist
+$routes->get('/receptionist/dashboard', 'Home::receptionist_dashboard');
+$routes->get('/receptionist/Leave', 'Home::receptionistLeave');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

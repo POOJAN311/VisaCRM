@@ -174,17 +174,16 @@
                           <label for="name">Description</label>
                           <textarea class="form-control" id="description" placeholder="Default"></textarea>
                         </div>
+                        <div class="form-group">
+                          <label for="name">Status</label>
+                          <select class="form-select">
+                            <option value="1">Pending</option>
+                            <option value="2">Active</option>
+                            <option value="3">Inactive</option>
+                          </select>
+                        </div>
                       </div>
 
-                    </div>
-                    <div class="form-group">
-                      <label for="name">Status</label>
-                      <input type="radio" id="Pending" name="Pending" value="Pending">
-                      <label for="Pending">Pending</label>
-                      <input type="radio" id="css" name="Pending" value="Approved">
-                      <label for="Approved">Approved</label>
-                      <input type="radio" id="javascript" name="Pending" value="Inprogress">
-                      <label for="Inprogress">Inprogress</label>
                     </div>
 
                   </div>
@@ -270,12 +269,16 @@
                                         </div>
                                         <div class="form-group">
                                           <label for="name">Status</label>
-                                          <input type="radio" id="Pending" name="Pending" value="Pending">
-                                          <label for="Pending">Pending</label>
-                                          <input type="radio" id="css" name="Pending" value="Approved">
-                                          <label for="Approved">Approved</label>
-                                          <input type="radio" id="javascript" name="Pending" value="Inprogress">
-                                          <label for="Inprogress">Inprogress</label>
+                                          <select id='dropdown' class="form-select">
+                                            <option value="1">Pending</option>
+                                            <option value="2">Active</option>
+                                            <option value="3">Inactive</option>
+                                          </select>
+                                          <br>
+                                          <div class="form-group">
+                                            <label for="name">Enter Student ID.</label>
+                                            <input type="text" class="form-control" id="textInput" disabled />
+                                          </div>
                                         </div>
                                       </form>
                                     </div>
@@ -382,6 +385,16 @@
   <script>
     $(function() {
       bsCustomFileInput.init();
+    });
+  </script>
+
+  <script>
+    $('#dropdown').change(function() {
+      if ($(this).val() == 2) {
+        $('#textInput').prop("disabled", false);
+      } else {
+        $('#textInput').prop("disabled", true);
+      }
     });
   </script>
 </body>

@@ -39,7 +39,7 @@
                     }
                 } else {
                     cell.innerHTML = '<button type="button" class="btn btn-success" onclick="">Save</button>&nbsp;<button type="button"  class="btn btn-danger" onclick="deleteRow(this)" />Delete</button>&nbsp;<button type="button"  class="btn btn-success"id="sentMessage" data-toggle="modal" data-target="#largeModal" >Update</button>';
-                    
+
                 }
             }
         }
@@ -60,10 +60,10 @@
                 table.deleteRow(rowCount - 1);
             }
         }
-        $scope.openModal = function(){
+        $scope.openModal = function() {
             $('#largeModal').modal('show');
 
-};
+        };
     </script>
 </head>
 
@@ -534,7 +534,7 @@
                             <div class="card-header">
                                 <h2>Add University</h2>
                                 <button onclick="addNewRow()" class="btn btn-primary">Add New Row</button>
-                                
+
                             </div>
                         </div>
                         <div class="card-body table-responsive p-0">
@@ -551,34 +551,34 @@
                             </table>
                         </div>
                     </div>
-
-                    <section class="content">
-                        <div class="container">
-                            <div class="row">
-                                <!-- left column -->
-                                <div class="col">
-                                    <!-- general form elements -->
-                                    <div class="card card-primary">
-                                        <div class="card-header">
-                                            <h3 class="card-title">Visa details</h3>
-                                        </div>
-                                        <form>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="name">Application ID</label>
-                                                            <input type="text" class="form-control" id="name" placeholder="Enter name">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="Country">Country</label>
-                                                            <select class="form-select">
-                                                                <option value="canada">Canada</option>
-                                                                <option value="USA">USA</option>
-                                                                <option value="UK">UK</option>
-                                                                <option value="Australia">Australia</option>
-                                                            </select>
-                                                        </div>
+                    <div class="myDiv" id="showvisa">
+                        <section class="content">
+                            <div class="container">
+                                <div class="row">
+                                    <!-- left column -->
+                                    <div class="col">
+                                        <!-- general form elements -->
+                                        <div class="card card-primary">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Visa details</h3>
+                                            </div>
+                                            <form>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="name">Application ID</label>
+                                                                <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="Country">Country</label>
+                                                                <select class="form-select">
+                                                                    <option value="canada">Canada</option>
+                                                                    <option value="USA">USA</option>
+                                                                    <option value="UK">UK</option>
+                                                                    <option value="Australia">Australia</option>
+                                                                </select>
+                                                            </div>
 
                                                         </div>
                                                         <div class="col-md-6">

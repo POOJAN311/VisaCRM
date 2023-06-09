@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url() ?>plugins/fontawesome-free/css/all.min.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="<?php echo base_url() ?>plugins/select2/css/select2.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url() ?>dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,8 +40,8 @@
                         cell.innerHTML = '<div class="form-group"><input type="text"class="form-control" /></div>';
                     }
                 } else {
-                    cell.innerHTML = '<button type="button" class="btn btn-success" onclick="">Save</button>&nbsp;<button type="button"  class="btn btn-danger" onclick="deleteRow(this)" />Delete</button>&nbsp;<button type="button"  class="btn btn-success"id="sentMessage" data-toggle="modal" data-target="#largeModal" >Update</button>';
-                    
+                    cell.innerHTML = '<button type="button" class="btn btn-success" onclick="">Save</button>&nbsp;<button type="button"  class="btn btn-danger" onclick="deleteRow(this)" />Delete</button>&nbsp;<button type="button"  class="btn btn-info"id="sentMessage" data-toggle="modal" data-target="#largeModal" >Update</button>';
+
                 }
             }
         }
@@ -60,10 +62,10 @@
                 table.deleteRow(rowCount - 1);
             }
         }
-        $scope.openModal = function(){
+        $scope.openModal = function () {
             $('#largeModal').modal('show');
 
-};
+        };
     </script>
 </head>
 
@@ -71,7 +73,8 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo base_url() ?>dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?php echo base_url() ?>dist/img/AdminLTELogo.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -82,7 +85,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/counsellor/dashboard" class="brand-link">
-                <img src="<?php echo base_url() ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="<?php echo base_url() ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Visa consultant</span>
             </a>
             <!-- Sidebar -->
@@ -90,7 +94,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?php echo base_url() ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?php echo base_url() ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Shail Shah</a>
@@ -98,7 +103,8 @@
                 </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -200,10 +206,12 @@
                                                 <div class="form-group">
                                                     <label>Student ID</label>
                                                     <br>
-                                                    <input type="text" class="form-control form-control-md" placeholder="Enter the student id">
+                                                    <input type="text" class="form-control form-control-md"
+                                                        placeholder="Enter the student id">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-block btn-outline-success btn-flat">Search</button>
+                                            <button type="submit"
+                                                class="btn btn-block btn-outline-success btn-flat">Search</button>
                                         </div>
                                     </div>
                                 </div>
@@ -334,7 +342,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -357,7 +366,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -381,7 +391,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -405,7 +416,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -429,7 +441,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -453,7 +466,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -477,7 +491,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -502,7 +517,8 @@
 
                                                                     <div class="form-group">
                                                                         <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
+                                                                        <select class="form-control select2"
+                                                                            style="width: 100%;">
                                                                             <option selected="selected">Pending</option>
                                                                             <option>Reviewing</option>
                                                                             <option>Approved</option>
@@ -530,11 +546,38 @@
                         <!-- /.content -->
                     </div>
                     <div class="myDiv" id="showapplication">
+                        <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Update Status</h4>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                      
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <label>Status</label>
+                                            <select class="form-select">
+                                                <option>Offered letter</option>
+                                                <option>Applied</option>
+                                            </select>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-header">
                                 <h2>Add University</h2>
                                 <button onclick="addNewRow()" class="btn btn-primary">Add New Row</button>
-                                
+
                             </div>
                         </div>
                         <div class="card-body table-responsive p-0">
@@ -568,7 +611,8 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="name">Application ID</label>
-                                                            <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                                            <input type="text" class="form-control" id="name"
+                                                                placeholder="Enter name">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="Country">Country</label>
@@ -580,42 +624,46 @@
                                                             </select>
                                                         </div>
 
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="phone number">Fees</label>
+                                                            <input type="number" class="form-control"
+                                                                id="exampleInputPassword1" placeholder="Fees">
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="phone number">Fees</label>
-                                                                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Fees">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="name">Status</label>
-                                                                <input type="radio" id="Pending" name="Pending" value="Pending">
-                                                                <label for="Pending">Pending</label>
-                                                                <input type="radio" id="css" name="Pending" value="Approved">
-                                                                <label for="Approved">Approved</label>
-                                                                <input type="radio" id="javascript" name="Pending" value="Inprogress">
-                                                                <label for="Inprogress">Inprogress</label>
-                                                            </div>
+                                                        <div class="form-group">
+                                                            <label for="name">Status</label>
+                                                            <input type="radio" id="Pending" name="Pending"
+                                                                value="Pending">
+                                                            <label for="Pending">Pending</label>
+                                                            <input type="radio" id="css" name="Pending"
+                                                                value="Approved">
+                                                            <label for="Approved">Approved</label>
+                                                            <input type="radio" id="javascript" name="Pending"
+                                                                value="Inprogress">
+                                                            <label for="Inprogress">Inprogress</label>
+                                                        </div>
 
-                                                        </div>
                                                     </div>
                                                 </div>
-                                        </div>
-                                        <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-                                        </form>
+                                            </div>
                                     </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
-                        </section>
-                    </div>
-
+                        </div>
+                    </section>
                 </div>
+
             </div>
         </div>
+    </div>
 
-        </section>
+    </section>
 
     </div>
 
@@ -644,11 +692,11 @@
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url() ?>dist/js/demo.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $('.select2').select2()
         });
-        $(document).ready(function() {
-            $('#myselection').on('change', function() {
+        $(document).ready(function () {
+            $('#myselection').on('change', function () {
                 var demovalue = $(this).val();
                 $("div.myDiv").hide();
                 $("#show" + demovalue).show();
@@ -663,7 +711,7 @@
     <script src="<?php echo base_url() ?>dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-        $(function() {
+        $(function () {
             bsCustomFileInput.init();
         });
     </script>

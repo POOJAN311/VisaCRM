@@ -38,7 +38,7 @@
                         cell.innerHTML = '<div class="form-group"><input type="text"class="form-control" /></div>';
                     }
                 } else {
-                    cell.innerHTML = '<button type="button" class="btn btn-success" onclick="">Save</button>&nbsp;<button type="button"  class="btn btn-danger" onclick="deleteRow(this)" />Delete</button>&nbsp;<button type="button"  class="btn btn-success"id="sentMessage" data-toggle="modal" data-target="#largeModal" >Update</button>';
+                    cell.innerHTML = '<button type="button" class="btn btn-success" onclick="">Save</button>&nbsp;<button type="button"  class="btn btn-danger" onclick="deleteRow(this)" />Delete</button>&nbsp;<button type="button"  class="btn btn-info"id="sentMessage" data-toggle="modal" data-target="#largeModal" >Update</button>';
 
                 }
             }

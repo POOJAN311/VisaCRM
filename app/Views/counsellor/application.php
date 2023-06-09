@@ -38,7 +38,8 @@
                         cell.innerHTML = '<div class="form-group"><input type="text"class="form-control" /></div>';
                     }
                 } else {
-                    cell.innerHTML = '<input type="button" value="delete" class="btn btn-danger" onclick="deleteRow(this)" />';
+                    cell.innerHTML = '<button type="button" class="btn btn-success" onclick="">Save</button>&nbsp;<button type="button"  class="btn btn-danger" onclick="deleteRow(this)" />Delete</button>&nbsp;<button type="button"  class="btn btn-success"id="sentMessage" data-toggle="modal" data-target="#largeModal" >Update</button>';
+                    
                 }
             }
         }
@@ -59,6 +60,10 @@
                 table.deleteRow(rowCount - 1);
             }
         }
+        $scope.openModal = function(){
+            $('#largeModal').modal('show');
+
+};
     </script>
 </head>
 
@@ -529,7 +534,7 @@
                             <div class="card-header">
                                 <h2>Add University</h2>
                                 <button onclick="addNewRow()" class="btn btn-primary">Add New Row</button>
-                                <button onclick="" class="btn btn-primary" style="margin-left: 750px;">Save</button>
+                                
                             </div>
                         </div>
                         <div class="card-body table-responsive p-0">
@@ -540,11 +545,38 @@
                                     <th>Course name</th>
                                     <th>Course ID</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
 
                             </table>
                         </div>
                     </div>
+                    <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Update Status</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            
+          </div>
+          <div class="modal-body">
+            <form>
+            <label for="Status">Status</label>
+
+<select class="form-select">
+    <option>Offered letter</option>
+    <option>Applied</option>
+  
+</select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
                     <section class="content">
                         <div class="container">

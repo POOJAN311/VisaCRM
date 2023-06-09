@@ -530,6 +530,30 @@
                         <!-- /.content -->
                     </div>
                     <div class="myDiv" id="showapplication">
+                        <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">Update Status</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <label>Status</label>
+                                            <select class="form-select">
+                                                <option>Offered letter</option>
+                                                <option>Applied</option>
+                                            </select>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card-header">
                                 <h2>Add University</h2>

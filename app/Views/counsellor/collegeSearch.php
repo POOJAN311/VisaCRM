@@ -243,7 +243,7 @@
                         <thead>
                           <tr>
                             <th>ID</th>
-                            <th>College Name</th>
+                            <th>University Name</th>
                             <th>Course Name</th>
                             <th>Duration</th>
                             <th>Fees (approx.)</th>

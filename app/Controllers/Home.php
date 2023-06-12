@@ -211,4 +211,12 @@ class Home extends BaseController
     {
         return view('receptionist/leave');
     }
+
+
+    // logout
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/login');
+    }
 }

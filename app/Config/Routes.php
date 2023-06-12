@@ -29,37 +29,38 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->match(['get', 'post'], '/login', 'Home::login');
-$routes->match(['get', 'post'], '/signup', 'Home::signup');
+$routes->get('/', 'Home::index', ['filter' => 'noauth']);
+$routes->match(['get', 'post'], '/login', 'Home::login', ['filter' => 'noauth']);
+$routes->match(['get', 'post'], '/signup', 'Home::signup', ['filter' => 'noauth']);
+$routes->match(['get'], '/logout', 'Home::logout');
 
 // Counsellor 
-$routes->get('/counsellor/dashboard', 'Home::counsellorDashboard');
-$routes->get('/counsellor/AddStudent', 'Home::counsellorAddStudent');
-$routes->get('/counsellor/Application', 'Home::counsellorApplication');
-$routes->get('/counsellor/CollegeSearch', 'Home::counsellorCollegeSearch');
-$routes->get('/counsellor/Leads', 'Home::counsellorLeads');
-$routes->get('/counsellor/Leave', 'Home::counsellorLeave');
-$routes->get('/counsellor/StudentInfo', 'Home::counsellorStudentInfo');
-$routes->get('/counsellor/VisaDetails', 'Home::counsellorVisaDetails');
-$routes->get('/counsellor/StudentSearch', 'Home::StudentSearch');
+$routes->get('/counsellor/dashboard', 'Home::counsellorDashboard', ['filter' => 'auth']);
+$routes->get('/counsellor/AddStudent', 'Home::counsellorAddStudent', ['filter' => 'auth']);
+$routes->get('/counsellor/Application', 'Home::counsellorApplication', ['filter' => 'auth']);
+$routes->get('/counsellor/CollegeSearch', 'Home::counsellorCollegeSearch', ['filter' => 'auth']);
+$routes->get('/counsellor/Leads', 'Home::counsellorLeads', ['filter' => 'auth']);
+$routes->get('/counsellor/Leave', 'Home::counsellorLeave', ['filter' => 'auth']);
+$routes->get('/counsellor/StudentInfo', 'Home::counsellorStudentInfo', ['filter' => 'auth']);
+$routes->get('/counsellor/VisaDetails', 'Home::counsellorVisaDetails', ['filter' => 'auth']);
+$routes->get('/counsellor/StudentSearch', 'Home::StudentSearch', ['filter' => 'auth']);
 
 
 // Student
-$routes->get('/student/dashboard', 'Home::studentDashboard');
-$routes->get('/student/ApplicationStatus', 'Home::ApplicationStatus');
-$routes->get('/student/FeePayment', 'Home::FeePayment');
+$routes->get('/student/dashboard', 'Home::studentDashboard', ['filter' => 'auth']);
+$routes->get('/student/ApplicationStatus', 'Home::ApplicationStatus', ['filter' => 'auth']);
+$routes->get('/student/FeePayment', 'Home::FeePayment', ['filter' => 'auth']);
 
 
 //admin
-$routes->get('/admin/dashboard', 'Home::studentAnalysis');
-$routes->get('/admin/CounsellorDetails', 'Home::CounsellorDetails');
-$routes->get('/admin/leaveApprove', 'Home::leaveApprove');
-$routes->get('/admin/AddUniversity', 'Home::AddUniversity');
-$routes->get('/admin/UniversityList', 'Home::UniversityList');
+$routes->get('/admin/dashboard', 'Home::studentAnalysis', ['filter' => 'auth']);
+$routes->get('/admin/CounsellorDetails', 'Home::CounsellorDetails', ['filter' => 'auth']);
+$routes->get('/admin/leaveApprove', 'Home::leaveApprove', ['filter' => 'auth']);
+$routes->get('/admin/AddUniversity', 'Home::AddUniversity', ['filter' => 'auth']);
+$routes->get('/admin/UniversityList', 'Home::UniversityList', ['filter' => 'auth']);
 // receptionist
-$routes->get('/receptionist/dashboard', 'Home::receptionist_dashboard');
-$routes->get('/receptionist/Leave', 'Home::receptionistLeave');
+$routes->get('/receptionist/dashboard', 'Home::receptionist_dashboard', ['filter' => 'auth']);
+$routes->get('/receptionist/Leave', 'Home::receptionistLeave', ['filter' => 'auth']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

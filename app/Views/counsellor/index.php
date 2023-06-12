@@ -50,14 +50,38 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="<?php echo base_url() ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block">Shail Shah</a>
-          </div>
-        </div>
+        <li class="nav-item ">
+                    <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a> -->
+                    <div class="dropdown-toggle user-panel mt-3 pb-3 mb-3 d-flex" data-bs-toggle="dropdown">
+
+                        <style>
+                            .dropdown-toggle::after {
+                                display: inline-block;
+                                margin-left: 0.255em;
+                                vertical-align: 1.255em;
+                                content: "";
+                                border-top: .3em solid;
+                                border-right: .3em solid transparent;
+                                border-bottom: 0;
+                                border-left: .3em solid transparent;
+                                margin-top: 0.9em;
+                                color: white;
+                            }
+                        </style>
+
+                        <div class="image">
+                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">Shail Shah</a>
+                        </div>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                </li>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -357,5 +381,5 @@
   <script src="<?php echo base_url() ?>dist/js/pages/dashboard.js"></script>
    
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </html>

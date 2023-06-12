@@ -306,7 +306,62 @@
                               Inprogress
                             </td>
                             <td>
-                              <button type="submit" class="btn btn-primary">Update</button>
+                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">Update</button>
+                              <div class="modal" id="myModal2">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Update Lead</h4>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                      <form>
+                                        <div class="row">
+                                          <div class="form-group">
+                                            <label for="name">Counsellor name</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                              <option selected>Default</option>
+                                              <option value="1">Aman</option>
+                                              <option value="2">Kushal</option>
+                                              <option value="3">Aksh</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="name">Description</label>
+                                            <textarea class="form-control" id="description" placeholder="Default"></textarea>
+                                          </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="name">Status</label>
+                                          <select id='dropdown' class="form-select">
+                                            <option value="1">Pending</option>
+                                            <option value="2">Active</option>
+                                            <option value="3">Inactive</option>
+                                          </select>
+                                          <br>
+                                          <div class="form-group">
+                                            <label for="name">Enter Student ID.</label>
+                                            <input type="text" class="form-control" id="textInput" disabled />
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+
+                                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           <tr>
@@ -319,7 +374,62 @@
                               Approved
                             </td>
                             <td>
-                              <button type="submit" class="btn btn-primary">Update</button>
+                              <button type="submit" class="btn btn-primary" data-bs-target="#myModal3" data-bs-toggle="modal">Update</button>
+                              <div class="modal" id="myModal3">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Update Lead</h4>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                      <form>
+                                        <div class="row">
+                                          <div class="form-group">
+                                            <label for="name">Counsellor name</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                              <option selected>Default</option>
+                                              <option value="1">Aman</option>
+                                              <option value="2">Kushal</option>
+                                              <option value="3">Aksh</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="name">Description</label>
+                                            <textarea class="form-control" id="description" placeholder="Default"></textarea>
+                                          </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="name">Status</label>
+                                          <select id='dropdown' class="form-select">
+                                            <option value="1">Pending</option>
+                                            <option value="2">Active</option>
+                                            <option value="3">Inactive</option>
+                                          </select>
+                                          <br>
+                                          <div class="form-group">
+                                            <label for="name">Enter Student ID.</label>
+                                            <input type="text" class="form-control" id="textInput" disabled />
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+
+                                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           <tr>
@@ -331,7 +441,62 @@
                               Pending
                             </td>
                             <td>
-                              <button type="submit" class="btn btn-primary">Update</button>
+                              <button type="submit" class="btn btn-primary" data-bs-target="#myModal4" data-bs-toggle="modal">Update</button>
+                              <div class="modal" id="myModal4">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Update Lead</h4>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                      <form>
+                                        <div class="row">
+                                          <div class="form-group">
+                                            <label for="name">Counsellor name</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                              <option selected>Default</option>
+                                              <option value="1">Aman</option>
+                                              <option value="2">Kushal</option>
+                                              <option value="3">Aksh</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="name">Description</label>
+                                            <textarea class="form-control" id="description" placeholder="Default"></textarea>
+                                          </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="name">Status</label>
+                                          <select id='dropdown' class="form-select">
+                                            <option value="1">Pending</option>
+                                            <option value="2">Active</option>
+                                            <option value="3">Inactive</option>
+                                          </select>
+                                          <br>
+                                          <div class="form-group">
+                                            <label for="name">Enter Student ID.</label>
+                                            <input type="text" class="form-control" id="textInput" disabled />
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+
+                                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
 

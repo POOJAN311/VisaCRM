@@ -168,7 +168,7 @@
                           <div class="alert alert-success">
                             <p> Data added </p>
                           </div>
-                          <?php } ?>
+                        <?php } ?>
                       </div>
                     </div>
                     <div class="row">
@@ -254,41 +254,40 @@
                           </tr>
                         </thead>
                         <tbody>
-                <tr>
-                    <?php if(!empty($details)){
-                        foreach($details as $details) {
-  ?>
-                        
-                       
-                        <tr>
-                        <td><?php echo $details['c_id'];   ?></td>
-                    <td><?php echo $details['name'];   ?></td>
-                    <td><?php echo $details['email'];   ?></td>
-                    <td><?php echo $details['phone'];   ?></td>
-                    <td><?php echo $details['Salary'];   ?></td>
-                    <td><?php echo $details['join_date'];   ?></td>
-                    <td><?php echo $details['commission'];   ?></td>
-                    <td>
-                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal">Update</button>
-                    </td>
-                </tr>
-                   <?php } } else { ?>
-                    <tr colspan="8"> Records not found</tr>
-                    <?php } ?>  
-                   
-                </tr>
-                
-            </tbody>
-                          
-                      </table>
-                    </div>
-                    <!-- /.card-body -->
+                          <tr>
+                            <?php if (!empty($details)) {
+                              foreach ($details as $details) {
+                                ?>
 
-                  </div>
-                </div>
-              </div>
-              <div class="modal" id="myModal">
+
+                              <tr>
+                                <td>
+                                  <?php echo $details['c_id']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['name']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['email']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['phone']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['Salary']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['join_date']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['commission']; ?>
+                                </td>
+                                <td>
+                                  <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#myModal<?php echo $details['c_id']; ?>">Update</button>
+                                </td>
+                              </tr>
+                              <div class="modal" id="myModal<?php echo $details['c_id']; ?>">
                 <div class="modal-dialog">
                   <div class="modal-content">
 
@@ -300,46 +299,39 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                      <form>
+                      <form action="<?php echo base_url() ?>" method="post">
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="name">Counsellor name</label>
-                              <input type="text" class="form-control" id="name" placeholder="Enter name">
+                              <input type="text" class="form-control" value='<?php echo $details['name']; ?>' name="name"placeholder="Enter name">
                             </div>
                             <div class="form-group">
                               <label for="name">Email</label>
-                              <input type="email" class="form-control" id="c_name" placeholder="Enter email">
+                              <input type="email" class="form-control" id="c_name" value='<?php echo $details['email']; ?>' name="email" placeholder="Enter email">
                             </div>
                             <div class="form-group">
                               <label for="name">Join Date</label>
-                              <input type="date" class="form-control">
+                              <input type="date" name="date" value='<?php echo $details['join_date']; ?>'  class="form-control">
                             </div>
                             <div class="form-group">
                               <label for="name">Commission percentage</label>
-                              <input type="text" class="form-control">
+                              <input type="text"value='<?php echo $details['commission']; ?>'  class="form-control" name="commission">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="phone number">Phone number</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Phone number">
+                              <input type="text" class="form-control" id="exampleInputPassword1"
+                               name="phone" placeholder="Phone number" value='<?php echo $details['phone']; ?>' >
                             </div>
                             <div class="form-group">
                               <label for="name">Salary</label>
-                              <input type="text" class="form-control" id="Salary" placeholder="Salary"></input>
-                            </div>
-                            <div class="form-group">
-                              <label>Commission type</label>
-                              <select class="form-control">
-                                <option>Fixed</option>
-                                <option>Custom</option>
-                              </select>
+                              <input type="text" class="form-control"value='<?php echo $details['Salary']; ?>'  name="salary" placeholder="Salary"></input>
                             </div>
                             <div class="form-group">
                               <label for="name">no of Leads</label>
-                              <input type="text" class="form-control" id="Succseeful Leads"></input>
+                              <input type="text" value='<?php echo $details['Predefined_lead']; ?>'  class="form-control" name="leads" id="Succseeful Leads"></input>
                             </div>
                           </div>
 
@@ -350,14 +342,30 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                    <a href="<?php echo base_url('admin/edit/'.$details['id']) ?>"  class="btn btn-primary">Edit</a>
-
+                      <a href="<?php echo base_url('admin/edit/' . $details['id']) ?>" class="btn btn-primary">Edit</a>
                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
 
                   </div>
                 </div>
               </div>
+                            <?php }
+                            } else { ?>
+                            <tr colspan="8"> Records not found</tr>
+                          <?php } ?>
+
+                          </tr>
+
+                        </tbody>
+
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+
+                  </div>
+                </div>
+              </div>
+              
               <div class="modal" id="myView">
                 <div class="modal-dialog modal-xl">
                   <div class="modal-content">

@@ -59,6 +59,8 @@ $routes->post('/admin/CounsellorDetails', 'Home::CounsellorDetails');
 $routes->get('/admin/leaveApprove', 'Home::leaveApprove', ['filter' => 'auth']);
 $routes->get('/admin/AddUniversity', 'Home::AddUniversity', ['filter' => 'auth']);
 $routes->get('/admin/UniversityList', 'Home::UniversityList', ['filter' => 'auth']);
+$routes->post('/admin/edit/(:num)', 'Home::Counselloredit/$1');  
+$routes->get('/admin/edit/(:num)', 'Home::Counselloredit/$1');  
 // receptionist
 $routes->get('/receptionist/dashboard', 'Home::receptionist_dashboard', ['filter' => 'auth']);
 $routes->get('/receptionist/Leave', 'Home::receptionistLeave', ['filter' => 'auth']);

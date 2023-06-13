@@ -8,14 +8,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
@@ -39,8 +36,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="../../index3.html" class="brand-link">
-        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
+        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
 
@@ -168,7 +164,7 @@
                           <div class="alert alert-success">
                             <p> Data added </p>
                           </div>
-                          <?php } ?>
+                        <?php } ?>
                       </div>
                     </div>
                     <div class="row">
@@ -193,13 +189,11 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="phone number">Counsellor id</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" name="c_id"
-                            placeholder="Enter id">
+                          <input type="text" class="form-control" id="exampleInputPassword1" name="c_id" placeholder="Enter id">
                         </div>
                         <div class="form-group">
                           <label for="phone number">Phone number</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" name="phone"
-                            placeholder="Phone number">
+                          <input type="text" class="form-control" id="exampleInputPassword1" name="phone" placeholder="Phone number">
                         </div>
                         <div class="form-group">
                           <label for="name">Salary</label>
@@ -254,33 +248,33 @@
                           </tr>
                         </thead>
                         <tbody>
-                <tr>
-                    <?php if(!empty($details)){
-                        foreach($details as $details) {
-  ?>
-                        
-                       
-                        <tr>
-                        <td><?php echo $details['c_id'];   ?></td>
-                    <td><?php echo $details['name'];   ?></td>
-                    <td><?php echo $details['email'];   ?></td>
-                    <td><?php echo $details['phone'];   ?></td>
-                    <td><?php echo $details['Salary'];   ?></td>
-                    <td><?php echo $details['join_date'];   ?></td>
-                    <td><?php echo $details['commission'];   ?></td>
-                    <td>
-                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal">Update</button>
-                    </td>
-                </tr>
-                   <?php } } else { ?>
-                    <tr colspan="8"> Records not found</tr>
-                    <?php } ?>  
-                   
-                </tr>
-                
-            </tbody>
-                          
+                          <tr>
+                            <?php if (!empty($details)) {
+                              foreach ($details as $details) {
+                            ?>
+
+
+                          <tr>
+                            <td><?php echo $details['c_id'];   ?></td>
+                            <td><?php echo $details['name'];   ?></td>
+                            <td><?php echo $details['email'];   ?></td>
+                            <td><?php echo $details['phone'];   ?></td>
+                            <td><?php echo $details['Salary'];   ?></td>
+                            <td><?php echo $details['join_date'];   ?></td>
+                            <td><?php echo $details['commission'];   ?></td>
+                            <td>
+                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Update</button>
+                            </td>
+                          </tr>
+                        <?php }
+                            } else { ?>
+                        <tr colspan="8"> Records not found</tr>
+                      <?php } ?>
+
+                      </tr>
+
+                        </tbody>
+
                       </table>
                     </div>
                     <!-- /.card-body -->
@@ -323,8 +317,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="phone number">Phone number</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Phone number">
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
                             </div>
                             <div class="form-group">
                               <label for="name">Salary</label>
@@ -350,7 +343,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                    <a href="<?php echo base_url('admin/edit/'.$details['id']) ?>"  class="btn btn-primary">Edit</a>
+                      <a href="" class="btn btn-primary">Edit</a>
 
                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
@@ -426,18 +419,13 @@
   <script src="../../dist/js/demo.js"></script>
   <!-- Page specific script -->
   <script>
-    $(function () {
+    $(function() {
       bsCustomFileInput.init();
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </html>

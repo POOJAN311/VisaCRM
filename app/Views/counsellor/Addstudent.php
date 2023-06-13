@@ -183,77 +183,63 @@
         </aside>
 
         <div class="content-wrapper">
+            <br>
             <div class="container">
-                <br>
-                <h2>General Information</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <form action="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="name">Full Name</label>
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter your number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <textarea name="address" class="form-control" rows="5" placeholder="Enter your address..."></textarea>
-                                        </div>
+                                <form id="regiration_form" method="post">
+                                    <fieldset>
+                                        <h2>Step 1: General Information</h2>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="">Gender</label>
-                                                <div class="form-group form-inline">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="gender">
-                                                        <label class="form-check-label">Male</label>
-                                                    </div>
-                                                    &nbsp; &nbsp;
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="gender">
-                                                        <label class="form-check-label">Female</label>
-                                                    </div>
+                                                <div class="form-group">
+                                                    <label for="name">Full Name</label>
+                                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter your number">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label>Date of Birth:</label>
-                                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                        <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" name="DOB" />
-                                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                                            <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                                    <label>Address</label>
+                                                    <textarea name="address" class="form-control" rows="5" placeholder="Enter your address..."></textarea>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label for="">Gender</label>
+                                                        <div class="form-group form-inline">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" value="male" name="gender">
+                                                                <label class="form-check-label">Male</label>
+                                                                &nbsp;
+                                                                <input class="form-check-input" type="radio" value="female" name="gender">
+                                                                <label class="form-check-label">Female</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Date of Birth:</label>
+                                                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                                                <input type="date" class="form-control" name="DOB" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="card-footer">
-                            <button class="btn btn-outline-success" type="submit">Submit</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <form id="regiration_form" novalidate action="action.php" method="post">
+                                        <input type="button" name="next" class="next btn btn-info" value="Next" />
+                                    </fieldset>
                                     <fieldset>
-                                        <h2>Step 1: Add School and College Details</h2>
+                                        <h2>Step 2: Add School and College Details</h2>
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -352,10 +338,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
                                         <input type="button" name="password" class="next btn btn-info" value="Next" />
                                     </fieldset>
                                     <fieldset>
-                                        <h2> Step 2: Add Work Details</h2>
+                                        <h2> Step 3: Add Work Details</h2>
                                         <hr>
                                         <div class="row">
                                             <div class="col-9">
@@ -394,28 +381,28 @@
                                         <input type="button" name="next" class="next btn btn-info" value="Next" />
                                     </fieldset>
                                     <fieldset>
-                                        <h2>Step 3: Country Selection</h2>
+                                        <h2>Step 4: Country Selection</h2>
                                         <hr>
                                         <div class="form-group">
                                             <h4>Select the country</h4>
                                             <select class="form-control" name="country">
-                                                <option value="">USA</option>
-                                                <option value="">Cananda</option>
-                                                <option value="">UK</option>
+                                                <option value="USA">USA</option>
+                                                <option value="Cananda">Cananda</option>
+                                                <option value="UK">UK</option>
                                             </select>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h4>Select visa type</h4>
                                                 <select class="form-control" name="visa_type">
-                                                    <option value="">Tourist Visa
+                                                    <option value="Tourist Visa">Tourist Visa
                                                     </option>
-                                                    <option value="">Study Visa</option>
-                                                    <option value="">Buisness Visa
+                                                    <option value="Study Visa">Study Visa</option>
+                                                    <option value="Buisness Visa">Buisness Visa
                                                     </option>
-                                                    <option value="">Employment Visa
+                                                    <option value="Employment Visa">Employment Visa
                                                     </option>
-                                                    <option value="">Transport</option>
+                                                    <option value="Transport">Transport</option>
                                                 </select>
                                             </div>
                                             <br>
@@ -451,7 +438,7 @@
                                         <!-- <input type="submit" name="submit" class="submit btn btn-success" value="Submit" /> -->
                                     </fieldset>
                                     <fieldset>
-                                        <h2>Step 4: IELTS & GRE SCORE</h2>
+                                        <h2>Step 5: IELTS & GRE SCORE</h2>
                                         <hr>
                                         <div class="container">
                                             <h4>IELTS SCORE</h4>

@@ -340,14 +340,14 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3">Average CGPA</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" name="cgpa" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-5">Last Semester
                                                         SGPA</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" name="sgpa" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -363,13 +363,13 @@
                                                     <label for="inputEmail3" class="col-md-2 col-form-label">Company
                                                         name</label>
                                                     <div class="col-md-10">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" name="company_name" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="inputPassword3" class="col-md-2">Experience</label>
                                                     <div class="col-md-10">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" name="work_exp" class="form-control">
                                                     </div>
                                                 </div>
 
@@ -378,12 +378,12 @@
                                                     <label for="">Job Type</label>
                                                     <div class="form-group form-inline">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="part">
+                                                            <input class="form-check-input" type="radio" name="job_type">
                                                             <label class="form-check-label">Part-Time</label>
                                                         </div>
                                                         &nbsp; &nbsp;
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="full">
+                                                            <input class="form-check-input" type="radio" name="job_type">
                                                             <label class="form-check-label">Full-Time</label>
                                                         </div>
                                                     </div>
@@ -407,7 +407,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h4>Select visa type</h4>
-                                                <select class="form-control" name="visa">
+                                                <select class="form-control" name="visa_type">
                                                     <option value="">Tourist Visa
                                                     </option>
                                                     <option value="">Study Visa</option>
@@ -437,7 +437,7 @@
                                                                     <label>Country
                                                                         name</label>
                                                                     <div>
-                                                                        <input type="text" class="form-control" placeholder="Enter country name">
+                                                                        <input type="text" name="prev_country" class="form-control" placeholder="Enter country name">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -471,13 +471,13 @@
                                                             <div class="form-group">
                                                                 <label class="col-md-2 col-form-label">Writing</label>
                                                                 <div class="col-md-10">
-                                                                    <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                    <input type="number" max="9" name="IELTS_W" class="form-control" placeholder="0.0">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="col-md-2 col-form-label">Listening</label>
                                                                 <div class="col-md-10">
-                                                                    <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                    <input type="number" max="9" name="IELTS_L" class="form-control" placeholder="0.0">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -485,20 +485,20 @@
                                                             <div class="form-group">
                                                                 <label class="col-md-2 col-form-label">Speaking</label>
                                                                 <div class="col-md-10">
-                                                                    <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                    <input type="number" max="9" name="IELTS_S" class="form-control" placeholder="0.0">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="col-md-2 col-form-label">Reading</label>
                                                                 <div class="col-md-10">
-                                                                    <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                    <input type="number" max="9" name="IELTS_R" class="form-control" placeholder="0.0">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-groupml ml-3">
                                                             <label>Overall</label>
                                                             <div>
-                                                                <input type="number" max="9" class="form-control" placeholder="0.0">
+                                                                <input type="number" max="9" name="IELTS_Overall" class="form-control" placeholder="0.0">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -518,34 +518,33 @@
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
-                                                                        <label>Verbal
-                                                                            Reasoning</label>
-                                                                        <div>
-                                                                            <input type="text" class="form-control" placeholder="0">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label>Quantitative
-                                                                            Reasoning</label>
-                                                                        <div>
-                                                                            <input type="text" class="form-control" placeholder="0">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
                                                                         <label>Analytical
                                                                             Reasoning</label>
                                                                         <div>
-                                                                            <input type="text" class="form-control" placeholder="0">
+                                                                            <input type="text" name="Gre_analytical" class="form-control" placeholder="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Overall Score</label>
+                                                                        <div>
+                                                                            <input type="text" name="Gre_overall" class="form-control" placeholder="0.0">
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label>Overall Score</label>
-                                                                <div>
-                                                                    <input type="text" class="form-control" placeholder="0.0">
+                                                            <div class="row">
+                                                                <div class="form-group">
+                                                                    <h5>TOFEL Overall</h5>
+                                                                    <div>
+                                                                        <input type="text" name="TOFEL" class="form-control" placeholder="0.0">
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;&nbsp;
+                                                                <div class="form-group">
+                                                                    <h5>PTE Overall</h5>
+                                                                    <div>
+                                                                        <input type="text" name="PTE" class="form-control" placeholder="0.0">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

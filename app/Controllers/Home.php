@@ -188,8 +188,8 @@ class Home extends BaseController
     }
     public function CounsellorDetails()
     {   
-        //   $session=\Config\Services::session();
-        // helper('form');
+          $session=\Config\Services::session();
+        helper('form');
        $data=[];
    
         if($this->request->getMethod()=='post')
@@ -213,10 +213,9 @@ class Home extends BaseController
                     'Predefined_lead'=>$this->request->getPost('leads'),
                     'c_id'=>$this->request->getPost('c_id')
                 ];
-                print_r($data);
                 $model->save($data);
               
-                // $session->setFlashdata('success','record added');
+                $session->setFlashdata('success','record added');
                 return view('admin/counsellorDetails',$data);
                
             }

@@ -9,7 +9,7 @@ class CounsellorModel extends Model
     protected $table      = 'counsellor';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['id', 'name',  'email', 'password'];
+    protected $allowedFields = ['id', 'name',  'email', 'password','c_id','salary','join_date','phone','commission','Predefined_lead'];
 
     // Callbacks
     protected $allowCallbacks = true;

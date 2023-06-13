@@ -55,6 +55,7 @@ $routes->get('/student/FeePayment', 'Home::FeePayment', ['filter' => 'auth']);
 //admin
 $routes->get('/admin/dashboard', 'Home::studentAnalysis', ['filter' => 'auth']);
 $routes->get('/admin/CounsellorDetails', 'Home::CounsellorDetails', ['filter' => 'auth']);
+$routes->post('/admin/CounsellorDetails', 'Home::CounsellorDetails');
 $routes->get('/admin/leaveApprove', 'Home::leaveApprove', ['filter' => 'auth']);
 $routes->get('/admin/AddUniversity', 'Home::AddUniversity', ['filter' => 'auth']);
 $routes->get('/admin/UniversityList', 'Home::UniversityList', ['filter' => 'auth']);

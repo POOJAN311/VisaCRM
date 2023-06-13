@@ -157,47 +157,45 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form name="createform" method="post">
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="name">Counsellor name</label>
-                          <input type="text" class="form-control" id="name" placeholder="Enter name">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
                         </div>
                         <div class="form-group">
                           <label for="name">Email</label>
-                          <input type="email" class="form-control" id="c_name" placeholder="Enter email">
+                          <input type="email" class="form-control" name="email" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="name">Join Date</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" name="date">
                           </div>
                           <div class="form-group">
                             <label for="name">Commission percentage</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="commission">
                           </div>
                       </div>
                       <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="phone number">Counsellor id</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1" name="c_id"
+                            placeholder="Enter id">
+                        </div>
                         <div class="form-group">
                           <label for="phone number">Phone number</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1"
+                          <input type="text" class="form-control" id="exampleInputPassword1" name="phone"
                             placeholder="Phone number">
                         </div>
                         <div class="form-group">
                           <label for="name">Salary</label>
-                          <input type="text" class="form-control" id="Salary" placeholder="Salary"></input>
-                        </div>
-                        <div class="form-group">
-                            <label>Commission type</label>
-                            <select class="form-control">
-                                <option>Fixed</option>
-                                <option>Custom</option>
-                            </select>
+                          <input type="text" class="form-control" name="salary" placeholder="Salary"></input>
                         </div>
                         <div class="form-group">
                             <label for="name">no of Leads</label>
-                            <input type="text" class="form-control" id="Succseeful Leads"></input>
+                            <input type="text" class="form-control" name="leads" id="Succseeful Leads"></input>
                           </div>
                       </div>
 

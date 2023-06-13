@@ -37,6 +37,8 @@ $routes->match(['get'], '/logout', 'Home::logout');
 // Counsellor 
 $routes->get('/counsellor/dashboard', 'Home::counsellorDashboard', ['filter' => 'auth']);
 $routes->get('/counsellor/AddStudent', 'Home::counsellorAddStudent', ['filter' => 'auth']);
+$routes->post('/counsellor/AddStudent', 'Home::counsellorAddStudent');
+
 $routes->get('/counsellor/Application', 'Home::counsellorApplication', ['filter' => 'auth']);
 $routes->get('/counsellor/CollegeSearch', 'Home::counsellorCollegeSearch', ['filter' => 'auth']);
 $routes->get('/counsellor/Leads', 'Home::counsellorLeads', ['filter' => 'auth']);

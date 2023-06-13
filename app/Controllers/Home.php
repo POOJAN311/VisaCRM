@@ -6,6 +6,8 @@ use App\Models\AdminModel;
 use App\Models\StudentModel;
 use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
+use App\Models\UniversityModel;
+use App\Models\LeaveModel;
 
 class Home extends BaseController
 {
@@ -132,7 +134,9 @@ class Home extends BaseController
 
     public function counsellorApplication()
     {
-        return view('counsellor/application');
+        $model = new UniversityModel();
+        $data['universityList'] = $model->findAll();
+        return view('counsellor/application', $data);
     }
 
     public function counsellorCollegeSearch()
@@ -147,6 +151,21 @@ class Home extends BaseController
 
     public function counsellorLeave()
     {
+        if ($this->request->getMethod() == 'post') {
+
+
+            $model = new LeaveModel();
+            $newData = array(
+                'desc' => $this->request->getVar('desc'),
+                'emp_id' => $this->request->getVar('emp_id'),
+                'start_leave' => $this->request->getVar('start_leave'),
+                'end_leave' => $this->request->getVar('end_leave'),
+            );
+
+            $model->save($newData);
+            $data['session1'] = 'Data added';
+            return view('counsellor/leave', $data);
+        }
         return view('counsellor/leave');
     }
 

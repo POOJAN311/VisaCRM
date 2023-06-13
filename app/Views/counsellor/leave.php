@@ -42,37 +42,37 @@
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <li class="nav-item ">
-                    <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
                     </a> -->
-                    <div class="dropdown-toggle user-panel mt-3 pb-3 mb-3 d-flex" data-bs-toggle="dropdown">
+          <div class="dropdown-toggle user-panel mt-3 pb-3 mb-3 d-flex" data-bs-toggle="dropdown">
 
-                        <style>
-                            .dropdown-toggle::after {
-                                display: inline-block;
-                                margin-left: 0.255em;
-                                vertical-align: 1.255em;
-                                content: "";
-                                border-top: .3em solid;
-                                border-right: .3em solid transparent;
-                                border-bottom: 0;
-                                border-left: .3em solid transparent;
-                                margin-top: 0.9em;
-                                color: white;
-                            }
-                        </style>
+            <style>
+              .dropdown-toggle::after {
+                display: inline-block;
+                margin-left: 0.255em;
+                vertical-align: 1.255em;
+                content: "";
+                border-top: .3em solid;
+                border-right: .3em solid transparent;
+                border-bottom: 0;
+                border-left: .3em solid transparent;
+                margin-top: 0.9em;
+                color: white;
+              }
+            </style>
 
-                        <div class="image">
-                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                        </div>
-                        <div class="info">
-                            <a href="#" class="d-block">Shail Shah</a>
-                        </div>
-                    </div>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                    </ul>
-                </li>
+            <div class="image">
+              <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Shail Shah</a>
+            </div>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </li>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -178,6 +178,15 @@
       <section class="content">
         <div class="container-fluid">
           <div class="row">
+            <div class="col-md-12">
+              <?php if (!empty($session1)) { ?>
+                <div class="alert alert-success">
+                  <p> Data added </p>
+                </div>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="row">
             <!-- left column -->
             <div class="col">
               <!-- general form elements -->
@@ -187,22 +196,17 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form method='post'>
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="name">Counsellor name</label>
-                          <input type="text" class="form-control" id="name" placeholder="First Name">
+                          <label for="name">Counsellor Id</label>
+                          <input type="text" name='emp_id' class="form-control" id="name" placeholder="Counsellor Id">
                         </div>
 
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="phone number"></label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
-                        </div>
-                      </div>
+
 
                     </div>
 
@@ -211,10 +215,8 @@
                         <div class="form-group">
                           <label>First Day of Absence:</label>
                           <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                            </div>
+                            <input type="date" name='start_leave' class="form-control datetimepicker-input" data-target="#reservationdate" />
+
                           </div>
 
                         </div>
@@ -224,28 +226,25 @@
                         <div class="form-group">
                           <label>Last Day of Absence:</label>
                           <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                            </div>
+                            <input type="date" name='end_leave' class="form-control datetimepicker-input" data-target="#reservationdate" />
+
+
                           </div>
 
                         </div>
-
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Description</label>
+                        <textarea class="form-control" id="description" name='desc' placeholder="Optional"></textarea>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label for="name">Description</label>
-                      <textarea class="form-control" id="description" placeholder="Optional"></textarea>
+
+
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                  </div>
-
-
-                  <!-- /.card-body -->
-
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
                 </form>
               </div>
               <div class="row">
@@ -363,4 +362,5 @@
   </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </html>

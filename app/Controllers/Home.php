@@ -7,6 +7,7 @@ use App\Models\StudentModel;
 use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
 use App\Models\UniversityModel;
+use App\Models\LeaveModel;
 
 class Home extends BaseController
 {
@@ -135,7 +136,7 @@ class Home extends BaseController
     {
         $model = new UniversityModel();
         $data['universityList'] = $model->findAll();
-       // print_r($data);
+        // print_r($data);
 
         //$model->save($data);
         return view('counsellor/application', $data);
@@ -153,6 +154,19 @@ class Home extends BaseController
 
     public function counsellorLeave()
     {
+        if ($this->request->getMethod() == 'post') {
+
+
+            $model = new LeaveModel();
+            $newData = array(
+                'desc' => $this->request->getVar('desc'),
+                'emp_id' => $this->request->getVar('emp_id'),
+                'start_leave' => $this->request->getVar('start_leave'),
+                'end_leave' => $this->request->getVar('end_leave'),
+            );
+
+            $model->save($newData);
+        }
         return view('counsellor/leave');
     }
 
@@ -193,15 +207,14 @@ class Home extends BaseController
         return view('admin/studentanalysis');
     }
     public function CounsellorDetails()
-    {   
+    {
         //   $session=\Config\Services::session();
         // helper('form');
-       $data=[];
-   
-        if($this->request->getMethod()=='post')
-        {    
-            $input=$this->validate([
-                'name'=>'required|min_length[2]',
+        $data = [];
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'name' => 'required|min_length[2]',
                 'phone' => 'required|numeric|max_length[10]',
                 'email' => 'required|valid_email|is_unique[counsellor.email]'
             ]);
@@ -221,19 +234,14 @@ class Home extends BaseController
                 ];
 
                 $model->save($data);
-              
+
                 // $session->setFlashdata('success','record added');
-                return view('admin/counsellorDetails',$data);
-               
+                return view('admin/counsellorDetails', $data);
+            } else {
+                $data['validation'] = $this->validator;
             }
-            else{
-                      $data['validation']=$this->validator;
-                     
-                      
-            }
-           
         }
-        return view('admin/counsellorDetails',$data);
+        return view('admin/counsellorDetails', $data);
     }
     public function leaveApprove()
     {

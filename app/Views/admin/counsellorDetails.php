@@ -350,7 +350,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                    <a href="<?php echo base_url('admin/edit/'.$details['id']) ?>"  class="btn btn-primary">Edit</a>
+                    <a href=""  class="btn btn-primary">Edit</a>
 
                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>

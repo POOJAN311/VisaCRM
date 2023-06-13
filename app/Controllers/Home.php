@@ -6,6 +6,7 @@ use App\Models\AdminModel;
 use App\Models\StudentModel;
 use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
+use App\Models\UniversityModel;
 
 class Home extends BaseController
 {
@@ -132,7 +133,12 @@ class Home extends BaseController
 
     public function counsellorApplication()
     {
-        return view('counsellor/application');
+        $model = new UniversityModel();
+        $data['universityList'] = $model->findAll();
+       // print_r($data);
+
+        //$model->save($data);
+        return view('counsellor/application', $data);
     }
 
     public function counsellorCollegeSearch()
@@ -187,47 +193,41 @@ class Home extends BaseController
         return view('admin/studentanalysis');
     }
     public function CounsellorDetails()
-    {   
+    {
         //   $session=\Config\Services::session();
         // helper('form');
-       $data=[];
-   
-        if($this->request->getMethod()=='post')
-        {    
-            $input=$this->validate([
-                'name'=>'required|min_length[2]',
+        $data = [];
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'name' => 'required|min_length[2]',
                 'phone' => 'required|numeric|max_length[10]',
                 'email' => 'required|valid_email|is_unique[counsellor.email]'
             ]);
-            
-            if($input==true){
-                
-                $model= new CounsellorModel();
+
+            if ($input == true) {
+
+                $model = new CounsellorModel();
                 $data = [
-                    'name'=>$this->request->getPost('name'),
-                    'phone'=>$this->request->getPost('phone'),
-                    'email'=>$this->request->getPost('email'),
-                    'join_date'=>$this->request->getPost('date'),
-                    'commission'=>$this->request->getPost('commission'),
-                    'salary'=>$this->request->getPost('salary'),
-                    'Predefined_lead'=>$this->request->getPost('leads'),
-                    'c_id'=>$this->request->getPost('c_id')
+                    'name' => $this->request->getPost('name'),
+                    'phone' => $this->request->getPost('phone'),
+                    'email' => $this->request->getPost('email'),
+                    'join_date' => $this->request->getPost('date'),
+                    'commission' => $this->request->getPost('commission'),
+                    'salary' => $this->request->getPost('salary'),
+                    'Predefined_lead' => $this->request->getPost('leads'),
+                    'c_id' => $this->request->getPost('c_id')
                 ];
                 print_r($data);
                 $model->save($data);
-              
+
                 // $session->setFlashdata('success','record added');
-                return view('admin/counsellorDetails',$data);
-               
+                return view('admin/counsellorDetails', $data);
+            } else {
+                $data['validation'] = $this->validator;
             }
-            else{
-                      $data['validation']=$this->validator;
-                     
-                      
-            }
-           
         }
-        return view('admin/counsellorDetails',$data);
+        return view('admin/counsellorDetails', $data);
     }
     public function leaveApprove()
     {

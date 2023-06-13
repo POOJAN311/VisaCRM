@@ -6,6 +6,7 @@ use App\Models\AdminModel;
 use App\Models\StudentModel;
 use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
+use App\Models\UniversityModel;
 
 class Home extends BaseController
 {
@@ -181,7 +182,12 @@ class Home extends BaseController
 
     public function counsellorApplication()
     {
-        return view('counsellor/application');
+        $model = new UniversityModel();
+        $data['universityList'] = $model->findAll();
+        // print_r($data);
+
+        //$model->save($data);
+        return view('counsellor/application', $data);
     }
 
     public function counsellorCollegeSearch()

@@ -27,11 +27,13 @@
                 var cell = row.insertCell(i);
                 if (i < cellCount - 1) {
                     if (i == 0) {
-                        cell.innerHTML = '<select id="university" name="university"class="form-select"> <option value="Charusat">Charusat</option> <option value="GCET">GCET</option>   <option value="Search more">Search more</option></select>';
 
-                        // cell.innerHTML='<select class="margin-left:10px"><option>Charusat</option><option>GCET</option><option><a href="">Search more</a></option></select>';
+
+
+                        cell.innerHTML = '<select id="university" name="university"class="form-select">  <?php foreach ($universityList as $key => $val) { ?><option  value=<?php echo $val['uname'] ?>> <?php echo $val['uname'] ?> </option><?php } ?></select>';
+
                     } else if (i == 2) {
-                        cell.innerHTML = '<select class="form-select"><option>Computer</option><option>Civil</option></select>';
+                        cell.innerHTML = '<select id="course" class="form-select"><option>Computer</option><option>Civil</option></select>';
                     } else if (i == 4) {
                         cell.innerHTML = '<select class="form-select"><option>In progress</option><option>Offered Letter</option></select>';
                     } else {
@@ -693,4 +695,7 @@
     </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </html>

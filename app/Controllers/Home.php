@@ -127,9 +127,57 @@ class Home extends BaseController
 
     public function counsellorAddStudent()
     {
+        $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'name' => 'required|min_length[2]',
+                'email' => 'required|valid_email|is_unique[student.email]'
+            ]);
+
+            if ($input == true) {
+
+                $modelst = new StudentModel();
+                $data = [
+                    'name' => $this->request->getPost('name'),
+                    'email' => $this->request->getPost('email'),
+                    'phone' => $this->request->getPost('phone'),
+                    'gender' => $this->request->getPost('gender'),
+                    'dob' => $this->request->getPost('DOB'),
+                    'address' => $this->request->getPost('address'),
+                    'company_name' => $this->request->getPost('company_name'),
+                    'work_exp' => $this->request->getPost('work_exp'),
+                    'job_type' => $this->request->getPost('job_type'),
+                    'country' => $this->request->getPost('country'),
+                    'visa_type' => $this->request->getPost('visa_type'),
+                    'prev_country' => $this->request->getPost('prev_country'),
+                    'IELTS_L' => $this->request->getPost('IELTS_L'),
+                    'IELTS_R' => $this->request->getPost('IELTS_R'),
+                    'IELTS_W' => $this->request->getPost('IELTS_W'),
+                    'IELTS_S' => $this->request->getPost('IELTS_S'),
+                    'IELTS_Overall' => $this->request->getPost('IELTS_Overall'),
+                    'Gre_analytical' => $this->request->getPost('Gre_analytical'),
+                    'Gre_overall' => $this->request->getPost('Gre_overall'),
+                    'TOFEL' => $this->request->getPost('TOFEL'),
+                    'PTE' => $this->request->getPost('PTE')
+                ];
+
+                $modelst->save($data);
+
+                // $session->setFlashdata('success', 'record added');
+                $data['session1'] = 'Data added';
+                // print_r(($data));
+                return view('counsellor/Addstudent', $data);
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
         return view('counsellor/Addstudent');
     }
-
     public function counsellorApplication()
     {
         return view('counsellor/application');

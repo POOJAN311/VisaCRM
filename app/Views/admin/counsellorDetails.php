@@ -8,11 +8,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
@@ -36,7 +39,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="../../index3.html" class="brand-link">
-        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
 
@@ -189,11 +193,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="phone number">Counsellor id</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" name="c_id" placeholder="Enter id">
+                          <input type="text" class="form-control" id="exampleInputPassword1" name="c_id"
+                            placeholder="Enter id">
                         </div>
                         <div class="form-group">
                           <label for="phone number">Phone number</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" name="phone" placeholder="Phone number">
+                          <input type="text" class="form-control" id="exampleInputPassword1" name="phone"
+                            placeholder="Phone number">
                         </div>
                         <div class="form-group">
                           <label for="name">Salary</label>
@@ -251,33 +257,7 @@
                           <tr>
                             <?php if (!empty($details)) {
                               foreach ($details as $details) {
-                            ?>
-
-
-                          <tr>
-                            <td><?php echo $details['c_id'];   ?></td>
-                            <td><?php echo $details['name'];   ?></td>
-                            <td><?php echo $details['email'];   ?></td>
-                            <td><?php echo $details['phone'];   ?></td>
-                            <td><?php echo $details['Salary'];   ?></td>
-                            <td><?php echo $details['join_date'];   ?></td>
-                            <td><?php echo $details['commission'];   ?></td>
-                            <td>
-                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Update</button>
-                            </td>
-                          </tr>
-                        <?php }
-                            } else { ?>
-                        <tr colspan="8"> Records not found</tr>
-                      <?php } ?>
-
-                      </tr>
-
-                        </tbody>
-
-                      </table>
-                    </div>
-                    <!-- /.card-body -->
+                                ?>
 
 
                               <tr>
@@ -308,67 +288,81 @@
                                 </td>
                               </tr>
                               <div class="modal" id="myModal<?php echo $details['c_id']; ?>">
-                <div class="modal-dialog">
-                  <div class="modal-content">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 class="modal-title">Update Details</h4>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Update Details</h4>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      <form action="<?php echo base_url() ?>" method="post">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="name">Counsellor name</label>
-                              <input type="text" class="form-control" value='<?php echo $details['name']; ?>' name="name"placeholder="Enter name">
-                            </div>
-                            <div class="form-group">
-                              <label for="name">Email</label>
-                              <input type="email" class="form-control" id="c_name" value='<?php echo $details['email']; ?>' name="email" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                              <label for="name">Join Date</label>
-                              <input type="date" name="date" value='<?php echo $details['join_date']; ?>'  class="form-control">
-                            </div>
-                            <div class="form-group">
-                              <label for="name">Commission percentage</label>
-                              <input type="text"value='<?php echo $details['commission']; ?>'  class="form-control" name="commission">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="phone number">Phone number</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
-                            </div>
-                            <div class="form-group">
-                              <label for="name">Salary</label>
-                              <input type="text" class="form-control"value='<?php echo $details['Salary']; ?>'  name="salary" placeholder="Salary"></input>
-                            </div>
-                            <div class="form-group">
-                              <label for="name">no of Leads</label>
-                              <input type="text" value='<?php echo $details['Predefined_lead']; ?>'  class="form-control" name="leads" id="Succseeful Leads"></input>
-                            </div>
-                          </div>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                      <form action="<?php echo base_url() ?>" method="post">
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="name">Counsellor name</label>
+                                              <input type="text" class="form-control"
+                                                value='<?php echo $details['name']; ?>' name="name"
+                                                placeholder="Enter name">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="name">Email</label>
+                                              <input type="email" class="form-control" id="c_name"
+                                                value='<?php echo $details['email']; ?>' name="email"
+                                                placeholder="Enter email">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="name">Join Date</label>
+                                              <input type="date" name="date" value='<?php echo $details['join_date']; ?>'
+                                                class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="name">Commission percentage</label>
+                                              <input type="text" value='<?php echo $details['commission']; ?>'
+                                                class="form-control" name="commission">
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="phone number">Phone number</label>
+                                              <input type="text" class="form-control" id="exampleInputPassword1"
+                                               name="phone" placeholder="Phone number"  value='<?php echo $details['phone']; ?>'>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="name">Salary</label>
+                                              <input type="text" class="form-control"
+                                                value='<?php echo $details['Salary']; ?>' name="salary"
+                                                placeholder="Salary"></input>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="name">no of Leads</label>
+                                              <input type="text" value='<?php echo $details['Predefined_lead']; ?>'
+                                                class="form-control" name="leads" id="Succseeful Leads"></input>
+                                            </div>
+                                          </div>
 
-                        </div>
+                                        </div>
 
-                      </form>
-                    </div>
+                                      </form>
+                                    </div>
 
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                      <a href="<?php echo base_url('admin/edit/' . $details['id']) ?>" class="btn btn-primary">Edit</a>
-                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <a href="<?php echo base_url('admin/edit/' . $details['id']) ?>"
+                                        class="btn btn-primary">Edit</a>
+                                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    </div>
 
-                  </div>
-                </div>
-              </div>
-                            
+                                  </div>
+                                </div>
+                              </div>
+                            <?php }
+                            } else { ?>
+                            <tr colspan="8"> Records not found</tr>
+                          <?php } ?>
 
                           </tr>
 
@@ -376,65 +370,63 @@
 
                       </table>
                     </div>
-                    <!-- /.card-body -->
-
-                  </div>
-                </div>
-              </div>
-              
-              <div class="modal" id="myView">
-                <div class="modal-dialog modal-xl">
-                  <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                      <h4 class="modal-title">Student Details</h4>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      <table class="table table-hover text-nowrap">
-                        <th>Name</th>
-                        <th>Phone number</th>
-                        <th>Email ID</th>
-                        <th>Country</th>
-                      </table>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-
-                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
-
-                  </div>
                 </div>
               </div>
             </div>
-            <!--/.col (left) -->
-            <!-- right column -->
 
+            <div class="modal" id="myView">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Student Details</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <table class="table table-hover text-nowrap">
+                      <th>Name</th>
+                      <th>Phone number</th>
+                      <th>Email ID</th>
+                      <th>Country</th>
+                    </table>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="float-right d-none d-sm-block">
-        <b>Version</b> 3.2.0
-      </div>
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-      All rights reserved.
-    </footer>
+          <!--/.col (left) -->
+          <!-- right column -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.2.0
+    </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
@@ -450,13 +442,18 @@
   <script src="../../dist/js/demo.js"></script>
   <!-- Page specific script -->
   <script>
-    $(function() {
+    $(function () {
       bsCustomFileInput.init();
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </html>

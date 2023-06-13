@@ -37,10 +37,12 @@ $routes->match(['get'], '/logout', 'Home::logout');
 // Counsellor 
 $routes->get('/counsellor/dashboard', 'Home::counsellorDashboard', ['filter' => 'auth']);
 $routes->get('/counsellor/AddStudent', 'Home::counsellorAddStudent', ['filter' => 'auth']);
+$routes->post('/counsellor/AddStudent', 'Home::counsellorAddStudent');
+
 $routes->get('/counsellor/Application', 'Home::counsellorApplication', ['filter' => 'auth']);
 $routes->get('/counsellor/CollegeSearch', 'Home::counsellorCollegeSearch', ['filter' => 'auth']);
 $routes->get('/counsellor/Leads', 'Home::counsellorLeads', ['filter' => 'auth']);
-$routes->get('/counsellor/Leave', 'Home::counsellorLeave', ['filter' => 'auth']);
+$routes->match(['get', 'post'], '/counsellor/Leave', 'Home::counsellorLeave', ['filter' => 'auth']);
 $routes->get('/counsellor/StudentInfo', 'Home::counsellorStudentInfo', ['filter' => 'auth']);
 $routes->get('/counsellor/VisaDetails', 'Home::counsellorVisaDetails', ['filter' => 'auth']);
 $routes->get('/counsellor/StudentSearch', 'Home::StudentSearch', ['filter' => 'auth']);

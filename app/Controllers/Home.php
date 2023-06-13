@@ -6,8 +6,6 @@ use App\Models\AdminModel;
 use App\Models\StudentModel;
 use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
-use App\Models\UniversityModel;
-use App\Models\LeaveModel;
 
 class Home extends BaseController
 {
@@ -129,66 +127,12 @@ class Home extends BaseController
 
     public function counsellorAddStudent()
     {
-        $session = \Config\Services::session();
-
-        helper('form');
-        $data = [];
-
-
-        if ($this->request->getMethod() == 'post') {
-            $input = $this->validate([
-                'name' => 'required|min_length[2]',
-                'email' => 'required|valid_email|is_unique[student.email]'
-            ]);
-
-            if ($input == true) {
-
-                $modelst = new StudentModel();
-                $data = [
-                    'name' => $this->request->getPost('name'),
-                    'email' => $this->request->getPost('email'),
-                    'phone' => $this->request->getPost('phone'),
-                    'gender' => $this->request->getPost('gender'),
-                    'dob' => $this->request->getPost('DOB'),
-                    'address' => $this->request->getPost('address'),
-                    'company_name' => $this->request->getPost('company_name'),
-                    'work_exp' => $this->request->getPost('work_exp'),
-                    'job_type' => $this->request->getPost('job_type'),
-                    'country' => $this->request->getPost('country'),
-                    'visa_type' => $this->request->getPost('visa_type'),
-                    'prev_country' => $this->request->getPost('prev_country'),
-                    'IELTS_L' => $this->request->getPost('IELTS_L'),
-                    'IELTS_R' => $this->request->getPost('IELTS_R'),
-                    'IELTS_W' => $this->request->getPost('IELTS_W'),
-                    'IELTS_S' => $this->request->getPost('IELTS_S'),
-                    'IELTS_Overall' => $this->request->getPost('IELTS_Overall'),
-                    'Gre_analytical' => $this->request->getPost('Gre_analytical'),
-                    'Gre_overall' => $this->request->getPost('Gre_overall'),
-                    'TOFEL' => $this->request->getPost('TOFEL'),
-                    'PTE' => $this->request->getPost('PTE')
-                ];
-
-                $modelst->save($data);
-
-                // $session->setFlashdata('success', 'record added');
-                $data['session1'] = 'Data added';
-                // print_r(($data));
-                return view('counsellor/Addstudent', $data);
-            } else {
-                $data['validation'] = $this->validator;
-            }
-        }
         return view('counsellor/Addstudent');
     }
 
     public function counsellorApplication()
     {
-        $model = new UniversityModel();
-        $data['universityList'] = $model->findAll();
-        // print_r($data);
-
-        //$model->save($data);
-        return view('counsellor/application', $data);
+        return view('counsellor/application');
     }
 
     public function counsellorCollegeSearch()
@@ -203,19 +147,6 @@ class Home extends BaseController
 
     public function counsellorLeave()
     {
-        if ($this->request->getMethod() == 'post') {
-
-
-            $model = new LeaveModel();
-            $newData = array(
-                'desc' => $this->request->getVar('desc'),
-                'emp_id' => $this->request->getVar('emp_id'),
-                'start_leave' => $this->request->getVar('start_leave'),
-                'end_leave' => $this->request->getVar('end_leave'),
-            );
-
-            $model->save($newData);
-        }
         return view('counsellor/leave');
     }
 
@@ -257,19 +188,12 @@ class Home extends BaseController
     }
     public function CounsellorDetails()
     {
-<<<<<<< HEAD
-        //   $session=\Config\Services::session();
-        // helper('form');
-        $data = [];
-
-=======
         $session = \Config\Services::session();
 
         helper('form');
         $data = [];
 
 
->>>>>>> 2b82f6c5348ba53ef5ee1d9ca71c6bd2c0e59159
         if ($this->request->getMethod() == 'post') {
             $input = $this->validate([
                 'name' => 'required|min_length[2]',
@@ -293,24 +217,17 @@ class Home extends BaseController
 
                 $model->save($data);
 
-<<<<<<< HEAD
-                // $session->setFlashdata('success','record added');
-=======
                 // $session->setFlashdata('success', 'record added');
                 $data['session1'] = 'Data added';
                 // print_r(($data));
->>>>>>> 2b82f6c5348ba53ef5ee1d9ca71c6bd2c0e59159
                 return view('admin/counsellorDetails', $data);
             } else {
                 $data['validation'] = $this->validator;
             }
         }
-<<<<<<< HEAD
-=======
         $model1 = new CounsellorModel();
         $counsellorarray = $model1->getRecords();
         $data['details'] = $counsellorarray;
->>>>>>> 2b82f6c5348ba53ef5ee1d9ca71c6bd2c0e59159
         return view('admin/counsellorDetails', $data);
     }
     public function leaveApprove()
@@ -334,7 +251,58 @@ class Home extends BaseController
     {
         return view('receptionist/leave');
     }
+    public function Counselloredit($id)
+    {
+        $session = \Config\Services::session();
+        helper('form');
+        $data = [];
+        $model = new CounsellorModel();
+        $detail = $model->getRow($id);
+        //    print_r($book);
+        if (empty($detail)) {
+            $session->setFlashdata('error', 'record not found');
+            return redirect()->to('/admin/dashboard');
+        }
+        $data['detail'] =  $detail;
+        //    echo view('books/create');
 
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'name' => 'required|min_length[2]',
+                'phone' => 'required|numeric|max_length[10]',
+                'email' => 'required|valid_email|is_unique[counsellor.email]'
+            ]);
+
+            if ($input == true) {
+
+                $model = new CounsellorModel();
+                $data = [
+                    'name' => $this->request->getPost('name'),
+                    'phone' => $this->request->getPost('phone'),
+                    'email' => $this->request->getPost('email'),
+                    'join_date' => $this->request->getPost('date'),
+                    'commission' => $this->request->getPost('commission'),
+                    'salary' => $this->request->getPost('salary'),
+                    'Predefined_lead' => $this->request->getPost('leads'),
+                    'c_id' => $this->request->getPost('c_id')
+                ];
+
+                $model->save($data);
+
+                // $session->setFlashdata('success', 'record added');
+                $data['session1'] = 'Data updated';
+                // print_r(($data));
+                return view('admin/counsellorDetails', $data);
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
+        $model1 = new CounsellorModel();
+        $counsellorarray = $model1->getRecords();
+        $data['details'] = $counsellorarray;
+        return view('admin/counsellorDetails', $data);
+    }
 
     // logout
     public function logout()

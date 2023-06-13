@@ -39,4 +39,7 @@ class CounsellorModel extends Model
 
         return $data;
     }
+    public function getRecords(){
+        return $this->orderBy('id','DESC')->findAll();
+     }
 }

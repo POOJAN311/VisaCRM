@@ -52,7 +52,7 @@ class Home extends BaseController
                             $admin = $model->where('email', $this->request->getVar('email'))->first();
                             if (!$admin) {
                                 $data['doesNotMatch'] = TRUE;
-                                return view('login',  $data);
+                                return view('login', $data);
                             }
                         }
                     }
@@ -77,7 +77,7 @@ class Home extends BaseController
             }
         }
 
-        return view('login',  $data);
+        return view('login', $data);
     }
 
     private function setUserSession($admin)
@@ -193,14 +193,15 @@ class Home extends BaseController
         return view('admin/studentanalysis');
     }
     public function CounsellorDetails()
-    {
+    {   
         //   $session=\Config\Services::session();
         // helper('form');
-        $data = [];
-
-        if ($this->request->getMethod() == 'post') {
-            $input = $this->validate([
-                'name' => 'required|min_length[2]',
+       $data=[];
+   
+        if($this->request->getMethod()=='post')
+        {    
+            $input=$this->validate([
+                'name'=>'required|min_length[2]',
                 'phone' => 'required|numeric|max_length[10]',
                 'email' => 'required|valid_email|is_unique[counsellor.email]'
             ]);
@@ -218,16 +219,21 @@ class Home extends BaseController
                     'Predefined_lead' => $this->request->getPost('leads'),
                     'c_id' => $this->request->getPost('c_id')
                 ];
-                print_r($data);
-                $model->save($data);
 
+                $model->save($data);
+              
                 // $session->setFlashdata('success','record added');
-                return view('admin/counsellorDetails', $data);
-            } else {
-                $data['validation'] = $this->validator;
+                return view('admin/counsellorDetails',$data);
+               
             }
+            else{
+                      $data['validation']=$this->validator;
+                     
+                      
+            }
+           
         }
-        return view('admin/counsellorDetails', $data);
+        return view('admin/counsellorDetails',$data);
     }
     public function leaveApprove()
     {

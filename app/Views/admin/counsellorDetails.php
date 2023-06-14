@@ -170,6 +170,13 @@
                           </div>
                         <?php } ?>
                       </div>
+                      <div class="col-md-12">
+                        <?php if (!empty($session2)) { ?>
+                          <div class="alert alert-success">
+                            <p> Data Update </p>
+                          </div>
+                        <?php } ?>
+                      </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
@@ -288,9 +295,10 @@
                                 </td>
                               </tr>
                               <div class="modal" id="myModal<?php echo $details['c_id']; ?>">
+                              <form name="createform" method="post" action="<?php echo base_url('admin/edit/'.$details['id']) ?>">
+
                                 <div class="modal-dialog">
                                   <div class="modal-content">
-
                                     <!-- Modal Header -->
                                     <div class="modal-header">
                                       <h4 class="modal-title">Update Details</h4>
@@ -299,7 +307,7 @@
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                      <form action="<?php echo base_url() ?>" method="post">
+                                    
                                         <div class="row">
                                           <div class="col-md-6">
                                             <div class="form-group">
@@ -346,18 +354,18 @@
 
                                         </div>
 
-                                      </form>
+                                      
                                     </div>
 
                                     <!-- Modal footer -->
                                     <div class="modal-footer">
-                                      <a href="<?php echo base_url('admin/edit/' . $details['id']) ?>"
-                                        class="btn btn-primary">Edit</a>
+                                    <button type="submit" class="btn btn-primary">Edit</button>
                                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                     </div>
-
+                                  
                                   </div>
                                 </div>
+                              </form>
                               </div>
                             <?php }
                             } else { ?>

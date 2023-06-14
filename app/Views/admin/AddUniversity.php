@@ -154,46 +154,41 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form>
+                                <form method="post">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="name">University ID</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter ID">
+                                                    <input type="text" class="form-control" id="name" name="university_code" placeholder="Enter ID">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">University name</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                                    <input type="text" class="form-control" id="name" name="uname" placeholder="Enter name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">Email</label>
-                                                    <input type="email" class="form-control" placeholder="Enter email">
+                                                    <input type="email" class="form-control" name="Email" placeholder="Enter email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">Map Location</label>
-                                                    <input type="text" class="form-control" placeholder="Enter URL">
+                                                    <input type="text" class="form-control" name="map_loc" placeholder="Enter URL">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="phone number">Phone number</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
+                                                    <input type="password" class="form-control" name="phone" id="exampleInputPassword1" placeholder="Phone number">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="phone number">Country</label>
-                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Country">
+                                                    <input type="text" class="form-control" name="Country" id="exampleInputPassword1" placeholder="Country">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-label" for="customFile">Logo</label>
-                                                    <input type="file" class="form-control" id="customFile" />
+                                                    <input type="file" class="form-control" name="Logo" id="customFile" />
                                                 </div>
-
-
-
-
                                             </div>
-
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -203,8 +198,6 @@
                                     </div>
                                 </form>
                             </div>
-
-
                         </div>
                         <!--/.col (left) -->
                         <!-- right column -->
@@ -423,4 +416,5 @@
     </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </html>

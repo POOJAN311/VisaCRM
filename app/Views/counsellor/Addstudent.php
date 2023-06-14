@@ -186,6 +186,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <form id="regiration_form" method="post">
+                                    <div class="col-md-12">
+                                        <?php if (!empty($session1)) { ?>
+                                            <div class="alert alert-success" id="alert" role="alert">
+                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                <strong>Data Added Successfully</strong>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
                                     <fieldset>
                                         <h2>Step 1: General Information</h2>
                                         <hr>
@@ -534,7 +542,7 @@
                                             </div>
                                         </div>
                                         <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-                                        <input type="submit" name="submit" class="submit btn btn-success" value="Submit" />
+                                        <input type="submit" name="submit" id="submit" class="submit btn btn-success" value="Submit" />
                                     </fieldset>
                                 </form>
                             </div>
@@ -760,7 +768,16 @@
             }
         });
     </script>
-
+    <script>
+        $(document).ready(function() {
+            // show the alert
+            setTimeout(function() {
+                $("#alert").fadeTo(1000, 0).slideUp(1000, function() {
+                    $(this).remove();
+                });
+            }, 2000);
+        });
+    </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 

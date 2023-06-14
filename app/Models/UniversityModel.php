@@ -9,7 +9,7 @@ class UniversityModel extends Model
     protected $table      = 'university';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['id', 'map_loc',  'uname', 'phone', 'Logo', 'Country', 'Email'];
+    protected $allowedFields = ['id', 'university_code', 'map_loc',  'uname', 'phone', 'Logo', 'Country', 'Email'];
 
     // Callbacks
     protected $allowCallbacks = true;

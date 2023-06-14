@@ -303,6 +303,42 @@ class Home extends BaseController
     }
     public function AddUniversity()
     {
+        $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'name' => 'required|min_length[2]',
+                'phone' => 'required|numeric|max_length[10]',
+                'email' => 'required|valid_email|is_unique[counsellor.email]'
+            ]);
+
+            if ($input == true) {
+
+                $model = new UniversityModel();
+                $data = [
+                    'university_code' => $this->request->getPost('university_code'),
+                    'map_loc' => $this->request->getPost('map_loc'),
+                    'uname' => $this->request->getPost('uname'),
+                    'phone' => $this->request->getPost('phone'),
+                    'Logo' => $this->request->getPost('Logo'),
+                    'Country' => $this->request->getPost('Country'),
+                    'Email' => $this->request->getPost('Email')
+                ];
+
+                $model->save($data);
+
+                // $session->setFlashdata('success', 'record added');
+                $data['session1'] = 'Data added';
+                // print_r(($data));
+                return view('admin/AddUniversity', $data);
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
         return view('admin/AddUniversity');
     }
     public function UniversityList()

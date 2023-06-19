@@ -270,41 +270,35 @@
                       <table class="table table-hover text-nowrap">
                         <thead>
                           <tr>
-                            <th>ID</th>
+                          <th>Date</th>
                             <th>Reason for Leave</th>
-                            <th>Date</th>
                             <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
-                            <td>
-                              Pending
-                            </td>
-
-
-                          </tr>
-                          <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
-                            <td>
-                              Approved
-                            </td>
-
-
-                          </tr>
-                          <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
-                            <td>
-                              Pending
-                            </td>
-
+                            
+                            <?php if (!empty($de)) {
+                              
+                                ?>
+                              <tr>
+                              <td>
+                                  <?php echo $de['Date']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $de['desc']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $de['status']; ?>
+                                </td>
+                                
+                              </tr>
+                              
+                              
+                            <?php }
+                             else { ?>
+                            <tr colspan="3"> Records not found</tr>
+                          <?php } ?>
 
                           </tr>
 

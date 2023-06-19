@@ -8,7 +8,7 @@ use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
 use App\Models\UniversityModel;
 use App\Models\LeaveModel;
-
+  
 class Home extends BaseController
 {
 
@@ -198,7 +198,8 @@ class Home extends BaseController
     }
 
     public function counsellorLeave()
-    {
+    {    $session=session();
+        // $data=[];
         if ($this->request->getMethod() == 'post') {
 
 
@@ -214,7 +215,11 @@ class Home extends BaseController
             $data['session1'] = 'Data added';
             return view('counsellor/leave', $data);
         }
-        return view('counsellor/leave');
+        $model1 = new LeaveModel();
+        $id=$session->get('id');
+        $data['de']=$model1->where('emp_id',$id)->first();
+        // print_r($data);
+        return view('counsellor/leave',$data);
     }
 
     public function counsellorStudentInfo()
@@ -298,8 +303,19 @@ class Home extends BaseController
         return view('admin/counsellorDetails', $data);
     }
     public function leaveApprove()
-    {
-        return view('admin/leaveApproval');
+    {     $model = new LeaveModel();
+        $counsellorarray = $model->getRecords();
+        $data['details'] = $counsellorarray;
+        return view('admin/leaveApproval',$data);
+    }
+    public function leavestatus($id)
+    {     $model = new LeaveModel();
+        $model->update($id,[
+            'status'=>'accepted'   
+             ]);
+             $counsellorarray = $model->getRecords();
+             $data['details'] = $counsellorarray;
+        return view('admin/leaveApproval',$data);
     }
     public function AddUniversity()
     {

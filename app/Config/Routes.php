@@ -64,6 +64,7 @@ $routes->post('/admin/AddUniversity', 'Home::AddUniversity');
 
 $routes->get('/admin/UniversityList', 'Home::UniversityList', ['filter' => 'auth']);
 $routes->post('/admin/edit/(:num)', 'Home::Counselloredit/$1');
+$routes->get('/admin/leavestatus/(:num)', 'Home::leavestatus/$1');
 // $routes->get('/admin/edit/(:num)', 'Home::Counselloredit/$1');  
 // receptionist
 $routes->get('/receptionist/dashboard', 'Home::receptionist_dashboard', ['filter' => 'auth']);

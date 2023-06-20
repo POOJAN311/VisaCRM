@@ -8,7 +8,8 @@ use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
 use App\Models\UniversityModel;
 use App\Models\LeaveModel;
-  
+use App\Models\EducationModel;
+
 class Home extends BaseController
 {
 
@@ -142,7 +143,19 @@ class Home extends BaseController
             ]);
 
             if ($input == true) {
-
+                $model2 = new EducationModel();
+                $datae = [
+                    '10_score' => $this->request->getPost('10_score'),
+                    'stu_id' => $this->request->getPost('stu_id'),
+                    '10_passing' => $this->request->getPost('10_passing'),
+                    'college_name' => $this->request->getPost('college_name'),
+                    'course_name' => $this->request->getPost('course_name'),
+                    '12_score' => $this->request->getPost('12_score'),
+                    'board' => $this->request->getPost('board'),
+                    '12_passing' => $this->request->getPost('12_passing'),
+                    'cgpa' => $this->request->getPost('cgpa'),
+                    'sgpa' => $this->request->getPost('sgpa'),
+                ];
                 $modelst = new StudentModel();
                 $data = [
                     'name' => $this->request->getPost('name'),
@@ -167,13 +180,14 @@ class Home extends BaseController
                     'TOFEL' => $this->request->getPost('TOFEL'),
                     'PTE' => $this->request->getPost('PTE')
                 ];
-
+                $model2->save($datae);
                 $modelst->save($data);
 
                 // $session->setFlashdata('success', 'record added');
+                $datae['session1'] = 'Data added';
                 $data['session1'] = 'Data added';
                 // print_r(($data));
-                return view('counsellor/Addstudent', $data);
+                return view('counsellor/Addstudent', $data, $datae);
             } else {
                 $data['validation'] = $this->validator;
             }
@@ -198,7 +212,8 @@ class Home extends BaseController
     }
 
     public function counsellorLeave()
-    {    $session=session();
+    {
+        $session = session();
         // $data=[];
         if ($this->request->getMethod() == 'post') {
 
@@ -216,10 +231,10 @@ class Home extends BaseController
             return view('counsellor/leave', $data);
         }
         $model1 = new LeaveModel();
-        $id=$session->get('id');
-        $data['de']=$model1->where('emp_id',$id)->first();
+        $id = $session->get('id');
+        $data['de'] = $model1->where('emp_id', $id)->first();
         // print_r($data);
-        return view('counsellor/leave',$data);
+        return view('counsellor/leave', $data);
     }
 
     public function counsellorStudentInfo()
@@ -240,7 +255,11 @@ class Home extends BaseController
     // student
     public function studentDashboard()
     {
-        return view('student/studentdetails');
+        $session = \Config\Services::session();
+        $model1 = new StudentModel();
+        $id = $session->get('id');
+        $data['details'] = $model1->where('id', $id)->getRecords();
+        return view('student/studentdetails', $data);
     }
     public function ApplicationStatus()
     {
@@ -303,19 +322,21 @@ class Home extends BaseController
         return view('admin/counsellorDetails', $data);
     }
     public function leaveApprove()
-    {     $model = new LeaveModel();
+    {
+        $model = new LeaveModel();
         $counsellorarray = $model->getRecords();
         $data['details'] = $counsellorarray;
-        return view('admin/leaveApproval',$data);
+        return view('admin/leaveApproval', $data);
     }
     public function leavestatus($id)
-    {     $model = new LeaveModel();
-        $model->update($id,[
-            'status'=>'accepted'   
-             ]);
-             $counsellorarray = $model->getRecords();
-             $data['details'] = $counsellorarray;
-        return view('admin/leaveApproval',$data);
+    {
+        $model = new LeaveModel();
+        $model->update($id, [
+            'status' => 'accepted'
+        ]);
+        $counsellorarray = $model->getRecords();
+        $data['details'] = $counsellorarray;
+        return view('admin/leaveApproval', $data);
     }
     public function AddUniversity()
     {
@@ -371,7 +392,7 @@ class Home extends BaseController
         return view('receptionist/leave');
     }
     public function Counselloredit($id)
-    {   
+    {
         $session = \Config\Services::session();
         helper('form');
         $data = [];
@@ -384,17 +405,17 @@ class Home extends BaseController
         // }
         // $data['detail'] =  $detail;
         //    echo view('books/create');
-        
+
         if ($this->request->getMethod() == 'post') {
             $input = $this->validate([
                 'name' => 'required|min_length[2]',
                 'phone' => 'required|numeric|max_length[10]',
                 // 'email' => 'required|valid_email|is_unique[counsellor.email]'
             ]);
-            
+
             if ($input == true) {
                 $model = new CounsellorModel();
-                $model->update($id,[
+                $model->update($id, [
                     'name' => $this->request->getPost('name'),
                     'phone' => $this->request->getPost('phone'),
                     'email' => $this->request->getPost('email'),
@@ -403,18 +424,18 @@ class Home extends BaseController
                     'salary' => $this->request->getPost('salary'),
                     'Predefined_lead' => $this->request->getPost('leads')
                 ]);
-               
+
                 $session->setFlashdata('data', 'record updates');
                 // $data['session2'] = 'Data updated';
                 // print_r(($data));
                 $counsellorarray = $model->getRecords();
                 $data['details'] = $counsellorarray;
-               return redirect()->to('admin/CounsellorDetails');
+                return redirect()->to('admin/CounsellorDetails');
             } else {
                 $data['validation'] = $this->validator;
             }
         }
-       
+
         echo 'shail';
         // return view('admin/counsellorDetails', $data);
     }

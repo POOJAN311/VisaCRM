@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class StudentModel extends Model
+class EducationModel extends Model
 {
-    protected $table      = 'student';
+    protected $table      = 'educational_details';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['id', 'name',  'email', 'password', 'role', 'stu_id', 'phone', 'gender', 'photo', 'dob', 'c_id', 'application_type', 'address', 'visa_type', 'country', 'prev_country', 'work_exp', 'company_name', 'job_type', 'IELTS_L', 'IELTS_R', 'IELTS_W', 'IELTS_S', 'IELTS_Overall', 'Gre_analytical', 'Gre_overall', 'TOFEL', 'PTE'];
+    protected $allowedFields = ['id', 'stu_id',  '10_score', 'board', '12_score', '10_passing', '12_passing', 'course_name', 'college_name', 'cgpa', 'sgpa'];
 
     // Callbacks
     protected $allowCallbacks = true;

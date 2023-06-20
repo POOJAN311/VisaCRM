@@ -157,228 +157,175 @@
                 <div class="card">
                     <div class="container p-3">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h3>General Information</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Full Name</th>
-                                                <td>Shail Shah</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Email</th>
-                                                <td colspan="2">shailshah24@gmail.com</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Phone No.</th>
-                                                <td colspan="2">9898967126</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-md-6 d-flex align-items-end">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Date of Application</th>
-                                                <td>06-05-21</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Gender</th>
-                                                <td>Male</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Address</th>
-                                                <td colspan="2">44,Tirath-3,Near AMUL diary road,Gujarat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Date of Birth</th>
-                                                <td colspan="2">24-11-2001</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <h3>General Information</h3>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Phone no.</th>
+                                        <th>Date of Birth</th>
+                                        <th>Gender</th>
+                                        <th>Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <?php if (!empty($details)) {
+                                            foreach ($details as $details) {
+                                        ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $details['name']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['email']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['phone']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['dob']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['gender']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['address']; ?>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="container p-3">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h3>Educational Details</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">10th Score</th>
-                                                <td>92 %</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">12th Status</th>
-                                                <td>Completed</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">12th Score</th>
-                                                <td colspan="2">98 %</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Board</th>
-                                                <td colspan="2">CBSE</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Passing year of 12th</th>
-                                                <td>2018</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-md-6 d-flex align-items-end">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Course Name</th>
-                                                <td>B.Tech Computer Engineering</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">College Name</th>
-                                                <td>CSPIT, CHARUSAT</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Average CGPA</th>
-                                                <td colspan="2">9.5</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Last Semester SGPA</th>
-                                                <td colspan="2">9.7</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <h3>Educational Details</h3>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>10th Score</th>
+                                        <th>12th Score</th>
+                                        <th>Board</th>
+                                        <th>10th passing year</th>
+                                        <th>12th passing year</th>
+                                        <th>College Name</th>
+                                        <th>Course Name</th>
+                                        <th>Average CGPA</th>
+                                        <th>Last SGPA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="container p-3">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h3>Company Experience</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Company Name</th>
-                                                <td>KERYAR</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Experience</th>
-                                                <td>Full Stack developer</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Job Type</th>
-                                                <td colspan="2">Full-Time</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Country Selection</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Country</th>
-                                                <td>USA</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Visa Type</th>
-                                                <td>Student Visa</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Previous Country visited</th>
-                                                <td colspan="2">UK</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <h3>Company Details</h3>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <th>Expirence</th>
+                                        <th>Job Type</th>
+                                        <th>Country</th>
+                                        <th>Visa Type</th>
+                                        <th>Previous Country</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <tr>
+                                        <td>
+                                            <?php echo $details['company_name']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['work_exp']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['job_type']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['country']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['visa_type']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['prev_country']; ?>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="container p-3">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h3>IELTS Score</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Listening</th>
-                                                <td>7.0</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Reading</th>
-                                                <td>5.0</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Writing</th>
-                                                <td>6.0</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Speaking</th>
-                                                <td>6.0</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Overall</th>
-                                                <td>6.5</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>GRE Score</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Overall</th>
-                                                <td>310</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h3>TOFEL Score</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Overall</th>
-                                                <td>200</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h3>PTE Score</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Overall</th>
-                                                <td>153</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <h3>IELTS & GRE Score</h3>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Listening</th>
+                                        <th>Reading</th>
+                                        <th>Writing</th>
+                                        <th>Speaking</th>
+                                        <th>Overall</th>
+                                        <th>GRE Ananlytical</th>
+                                        <th>GRE Overall</th>
+                                        <th>TOFEL Overall</th>
+                                        <th>PTE Overall</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <tr>
+                                        <td>
+                                            <?php echo $details['IELTS_L']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['IELTS_R']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['IELTS_W']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['IELTS_S']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['IELTS_Overall']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['Gre_analytical']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['Gre_overall']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['TOFEL']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $details['PTE']; ?>
+                                        </td>
+                                    </tr>
+                                <?php }
+                                        } else { ?>
+                            <?php } ?>
+                            </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

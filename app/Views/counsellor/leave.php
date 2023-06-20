@@ -200,10 +200,6 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="name">Counsellor Id</label>
-                          <input type="text" name='emp_id' class="form-control" id="name" placeholder="Counsellor Id">
-                        </div>
 
                       </div>
 

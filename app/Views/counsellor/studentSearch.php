@@ -230,7 +230,7 @@
                     <thead>
                       <tr>
                         <th>Student Name</th>
-                        <th>Counsellor Name</th>
+                      
                         <th>Application ID</th>
                         <th>Phone No.</th>
                         <th>Visa Status</th>
@@ -240,7 +240,7 @@
                     <tbody>
                       <tr>
                         <td>Shail Shah</td>
-                        <td>Ritesh Patel</td>
+                       
                         <td>7874566138</td>
                         <td>96647 71856</td>
                         <td>In Progress</td>
@@ -248,7 +248,7 @@
                       </tr>
                       <tr>
                         <td>Rohit Shah</td>
-                        <td>Ashwin Patel</td>
+                     
                         <td>4529823247</td>
                         <td>96947 71853</td>
                         <td>Completed</td>
@@ -256,7 +256,7 @@
                       </tr>
                       <tr>
                         <td>Poojan Patel</td>
-                        <td>Ritesh Patel</td>
+                      
                         <td>9874566138</td>
                         <td>89265 71856</td>
                         <td>In Progress</td>
@@ -264,7 +264,7 @@
                       </tr>
                       <tr>
                         <td>Mayan Prajapati</td>
-                        <td>Harsh Patel</td>
+                        
                         <td>8874566138</td>
                         <td>88531 71856</td>
                         <td>Pending</td>
@@ -272,7 +272,7 @@
                       </tr>
                       <tr>
                         <td>Aakash Kumar</td>
-                        <td>Ritesh Patel</td>
+                       
                         <td>6844566138</td>
                         <td>96647 71856</td>
                         <td>Pending</td>

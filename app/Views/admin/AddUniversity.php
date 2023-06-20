@@ -154,14 +154,10 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post">
+                                <form method="post" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="name">University ID</label>
-                                                    <input type="text" class="form-control" id="name" name="university_code" placeholder="Enter ID">
-                                                </div>
                                                 <div class="form-group">
                                                     <label for="name">University name</label>
                                                     <input type="text" class="form-control" id="name" name="uname" placeholder="Enter name">
@@ -178,7 +174,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="phone number">Phone number</label>
-                                                    <input type="password" class="form-control" name="phone" id="exampleInputPassword1" placeholder="Phone number">
+                                                    <input type="text" class="form-control" name="phone" id="exampleInputPassword1" placeholder="Phone number">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="phone number">Country</label>
@@ -227,35 +223,32 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form>
-                                    <div class="card-body">
+                                <form action="<?php echo base_url('admin/AddUniversityCourses') ?>" method="post">
+                                    <div class="card-body"> 
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="name">University ID</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter ID">
+                                            <div class="form-group">
+                                                    <label for="name">University name</label>
+                                                    <input type="text" name="uname" class="form-control" placeholder="Enter course">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="name">Course name</label>
-                                                    <input type="text" class="form-control" placeholder="Enter course">
-                                                </div>
+                                                
                                                 <div class="form-group">
                                                     <label for="name">Commission</label>
-                                                    <input type="text" class="form-control" placeholder="Enter course commission">
+                                                    <input type="text" name="commission" class="form-control" placeholder="Enter course commission">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="name">Course ID</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter ID">
+                                            <div class="form-group">
+                                                    <label for="name">Course name</label>
+                                                    <input type="text" name="cname" class="form-control" placeholder="Enter course">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="phone number">Fees</label>
-                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
+                                                    <input type="text" name="fees" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">Duration</label>
-                                                    <input type="text" class="form-control" placeholder="Enter duration">
+                                                    <input type="text" class="form-control" name="duration" placeholder="Enter duration">
                                                 </div>
 
 
@@ -303,60 +296,64 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form>
+                                <form action="<?php echo base_url('admin/CourseCriteria') ?>" method="post">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="name">Course ID</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter course ID">
+                                                    <label for="name">University name</label>
+                                                    <input type="text" class="form-control" name="uname" placeholder="Enter course ID">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">12 th score</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter minimum 12 th score">
+                                                    <input type="text" class="form-control" name="12" id="name" placeholder="Enter minimum 12 th score">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">IELTS_S</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter speaking">
+                                                    <input type="text" class="form-control" id="name" name="speaking" placeholder="Enter speaking">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">IELTS_L</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter listening">
+                                                    <input type="text" class="form-control" name="listening" id="name" placeholder="Enter listening">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">GRE_overall</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter Gre score">
+                                                    <input type="text" class="form-control" name="GRE_overall" id="name" placeholder="Enter Gre score">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">Work Experience</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter work experience">
+                                                    <input type="text" class="form-control" name="work" id="name" placeholder="Enter work experience">
                                                 </div>
 
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
+                                                <div class="form-group">
+                                                    <label for="name">Course name</label>
+                                                    <input type="text" class="form-control" name="cname" id="name" placeholder="Enter reading">
+                                                </div>
                                                     <label for="name">IELTS_R</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter reading">
+                                                    <input type="text" class="form-control" name="reading" id="name" placeholder="Enter reading">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">IELTS_W</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter writing">
+                                                    <input type="text" class="form-control" name="writing" id="name" placeholder="Enter writing">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">IELTS_overall</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter ">
+                                                    <input type="text" class="form-control" name="IELTS_overall"id="name" placeholder="Enter ">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">GRE_analytical</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter Gre analytical">
+                                                    <input type="text" class="form-control" name="GRE_analytical"id="name" placeholder="Enter Gre analytical">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">TOEFL</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter TOEFL score">
+                                                    <input type="text" class="form-control" name="TOEFL"id="name" placeholder="Enter TOEFL score">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="name">PTE</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter PTE score">
+                                                    <input type="text" class="form-control" name="PTE" id="name" placeholder="Enter PTE score">
                                                 </div>
 
 

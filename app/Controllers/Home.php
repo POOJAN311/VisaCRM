@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\AdminModel;
+use App\Models\coursecriteriaModel;
 use App\Models\StudentModel;
 use App\Models\CounsellorModel;
 use App\Models\ReceptionistModel;
+use App\Models\UnicoursesModel;
 use App\Models\UniversityModel;
 use App\Models\LeaveModel;
 use App\Models\EducationModel;
@@ -217,11 +219,10 @@ class Home extends BaseController
         // $data=[];
         if ($this->request->getMethod() == 'post') {
 
-
             $model = new LeaveModel();
             $newData = array(
                 'desc' => $this->request->getVar('desc'),
-                'emp_id' => $this->request->getVar('emp_id'),
+                'emp_id' => $session->get('id'),
                 'start_leave' => $this->request->getVar('start_leave'),
                 'end_leave' => $this->request->getVar('end_leave'),
             );
@@ -345,23 +346,28 @@ class Home extends BaseController
         helper('form');
         $data = [];
 
-
         if ($this->request->getMethod() == 'post') {
+            
             $input = $this->validate([
-                'name' => 'required|min_length[2]',
+                'uname' => 'required|min_length[2]',
                 'phone' => 'required|numeric|max_length[10]',
-                'email' => 'required|valid_email|is_unique[counsellor.email]'
+                'Email' => 'required|valid_email|is_unique[university.email]'
             ]);
 
             if ($input == true) {
 
                 $model = new UniversityModel();
+                $file=$this->request->getFile('Logo');
+                if($file->isValid() && !$file->hasMoved())
+                {   $filename= $file->getRandomName();
+                    $file->move('/upload',$filename);
+                    
+                }
                 $data = [
-                    'university_code' => $this->request->getPost('university_code'),
                     'map_loc' => $this->request->getPost('map_loc'),
                     'uname' => $this->request->getPost('uname'),
                     'phone' => $this->request->getPost('phone'),
-                    'Logo' => $this->request->getPost('Logo'),
+                    'Logo' => $filename,
                     'Country' => $this->request->getPost('Country'),
                     'Email' => $this->request->getPost('Email')
                 ];
@@ -378,9 +384,113 @@ class Home extends BaseController
         }
         return view('admin/AddUniversity');
     }
-    public function UniversityList()
+
+    public function AddUniversityCourses()
     {
-        return view('admin/UniversityList');
+        $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+        if ($this->request->getMethod() == 'post') {
+            
+            // $input = $this->validate([
+            //     'uname' => 'required|min_length[2]',
+            //     'phone' => 'required|numeric|max_length[10]',
+            //     'Email' => 'required|valid_email|is_unique[university.email]'
+            // ]);
+
+           
+
+                $model = new UnicoursesModel();
+                 $uname=$this->request->getPost('uname');
+                $result= $model->getuid($uname);
+                // print_r($result);
+
+                $data = [
+                    'cname' => $this->request->getPost('cname'),
+                    'duration' => $this->request->getPost('duration'),
+                    'Fees' => $this->request->getPost('fees'),
+                    'commission' => $this->request->getPost('commission'),
+                    'uid'=>$result
+                ];
+
+                $model->save($data);
+
+                // $session->setFlashdata('success', 'record added');
+                $data['session1'] = 'Data added';
+                // print_r(($data));
+                return view('admin/AddUniversity', $data);
+           
+        }
+        return view('admin/AddUniversity');
+    }
+    public function CourseCriteria()
+    {
+        $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+        if ($this->request->getMethod() == 'post') {
+            
+            // $input = $this->validate([
+            //     'uname' => 'required|min_length[2]',
+            //     'phone' => 'required|numeric|max_length[10]',
+            //     'Email' => 'required|valid_email|is_unique[university.email]'
+            // ]);
+
+           
+
+                $model = new coursecriteriaModel();
+                 $uname=$this->request->getPost('uname');
+                //  print_r($uname);
+                 $cname=$this->request->getPost('cname');
+                $result= $model->getuid($uname);
+                $result1= $model->getcid($cname);
+                // print_r($result);
+                // print_r($result1);
+
+                $data = [
+                    '12th' => $this->request->getPost('12'),
+                    'IELTS_S' => $this->request->getPost('speaking'),
+                    'IELTS_L' => $this->request->getPost('listening'),
+                    'commission' => $this->request->getPost('GRE_overall'),
+                    'workexp' => $this->request->getPost('work'),
+                    'IELTS_R' => $this->request->getPost('reading'),
+                    'IELTS_W' => $this->request->getPost('writing'),
+                    'IELTS_overall' => $this->request->getPost('IELTS_overall'),
+                    'GRE_analytical' => $this->request->getPost('GRE_analytical'),
+                    'TOFEL' => $this->request->getPost('TOEFL'),
+                    'PTE' => $this->request->getPost('PTE'),
+                    'uid'=>$result,
+                    'courseid'=>$result1
+                ];
+
+                $model->save($data);
+
+                // $session->setFlashdata('success', 'record added');
+                $data['session1'] = 'Data added';
+                // print_r(($data));
+                return view('admin/AddUniversity', $data);
+           
+        }
+        return view('admin/AddUniversity');
+    }
+    
+    public function UniversityList()
+    { 
+        $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+        $model1 = new UniversityModel();
+        $counsellorarray = $model1->getRecords();
+        $data['details'] = $counsellorarray;
+        $coursedetails=$model1->getcourse('1');
+        $data['course']=$coursedetails;
+        return view('admin/UniversityList',$data);
     }
     //receptionist
     public function receptionist_dashboard()

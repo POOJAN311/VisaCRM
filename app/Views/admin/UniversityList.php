@@ -176,7 +176,7 @@
                           <tr>
                             <th>Name</th>
                             <th>Logo</th>
-                            <th>ID</th>
+                           
                             <th>Email</th>
                             <th>Phone number</th>
                             <th>map location</th>
@@ -185,15 +185,28 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td></td>
-                            <td>11-7-2014</td>
-                            <td>
-                              Pending
-                            </td>
-                            <td></td>
-                            <td>
+                            <?php if (!empty($details)) {
+                              foreach ($details as $details) {
+                                ?>
+
+
+                              <tr>
+                                <td>
+                                  <?php echo $details['uname']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['Logo']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['Email']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['phone']; ?>
+                                </td>
+                                <td>
+                                  <?php echo $details['map_loc']; ?>
+                                </td>
+                                <td>
                               <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#myModal">View</button>
                               <div class="modal" id="myModal">
@@ -251,9 +264,13 @@
                               </div>
 
                             </td>
-                             
+                                
+                            <?php }
+                            } else { ?>
+                            <tr colspan="8"> Records not found</tr>
+                          <?php } ?>
+
                           </tr>
-                        
 
                         </tbody>
                       </table>

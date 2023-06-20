@@ -61,6 +61,8 @@ $routes->post('/admin/CounsellorDetails', 'Home::CounsellorDetails');
 $routes->get('/admin/leaveApprove', 'Home::leaveApprove', ['filter' => 'auth']);
 $routes->get('/admin/AddUniversity', 'Home::AddUniversity', ['filter' => 'auth']);
 $routes->post('/admin/AddUniversity', 'Home::AddUniversity');
+$routes->post('/admin/AddUniversityCourses', 'Home::AddUniversityCourses');
+$routes->post('/admin/CourseCriteria', 'Home::CourseCriteria');
 
 $routes->get('/admin/UniversityList', 'Home::UniversityList', ['filter' => 'auth']);
 $routes->post('/admin/edit/(:num)', 'Home::Counselloredit/$1');

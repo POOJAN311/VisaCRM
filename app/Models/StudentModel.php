@@ -43,4 +43,17 @@ class StudentModel extends Model
     {
         return $this->orderBy('id', 'DESC')->findAll();
     }
+    public function getdetails(){
+        $db=\config\Database::connect();
+        // $data=$this->db->query("SELECT * from leave ");
+        // print_r($data);
+        $builder=$this->db->table(" student");
+        $builder->select('*');
+        $builder->join('visa_application','student.id=visa_application.stu_id');
+        $data=$builder->get()->getResultArray();
+        // echo $this->db->getLastQuery();
+        //   print_r($data[0]);
+        // return $this->orderBy('id','DESC')->findAll();
+        return $data;
+     }
 }

@@ -320,7 +320,7 @@
                                 <thead>
                                     <tr>
                                         <th>Student Name</th>
-                                        <th>Counsellor Name</th>
+                                        <th>Counsellor ID</th>
                                         <th>Application ID</th>
                                         <th>Phone No.</th>
                                         <th>Visa Status</th>
@@ -328,47 +328,39 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Shail Shah</td>
-                                        <td>Ritesh Patel</td>
-                                        <td>7874566138</td>
-                                        <td>96647 71856</td>
-                                        <td>In Progress</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rohit Shah</td>
-                                        <td>Ashwin Patel</td>
-                                        <td>4529823247</td>
-                                        <td>96947 71853</td>
-                                        <td>Completed</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Poojan Patel</td>
-                                        <td>Ritesh Patel</td>
-                                        <td>9874566138</td>
-                                        <td>89265 71856</td>
-                                        <td>In Progress</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mayan Prajapati</td>
-                                        <td>Harsh Patel</td>
-                                        <td>8874566138</td>
-                                        <td>88531 71856</td>
-                                        <td>Pending</td>
-                                        <td>Done</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Aakash Kumar</td>
-                                        <td>Ritesh Patel</td>
-                                        <td>6844566138</td>
-                                        <td>96647 71856</td>
-                                        <td>Pending</td>
-                                        <td>Pending</td>
-                                    </tr>
-                                </tbody>
+                                                    <tr>
+                                                        <?php if (!empty($student)) {
+                                                            foreach ($student as $student) {
+                                                                ?>
+
+
+                                                            <tr>
+                                                                <td>
+                                                                    <?php echo $student['name']; ?>
+                                                                </td>
+                                                                <td>
+                                                                <?php echo $student['c_id']; ?>
+                                                            </td>
+                                                                <td>
+                                                                    <?php echo $student['appli_id']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php echo $student['phone']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <?php echo $student['Status']; ?>
+                                                                </td>
+                                                               
+
+
+                                                            <?php }
+                                                        } else { ?>
+                                                        <tr colspan="4"> Records not found</tr>
+                                                    <?php } ?>
+                                                     
+                                                    </tr>
+
+                                                </tbody>
                             </table>
                         </div>
                     </div>

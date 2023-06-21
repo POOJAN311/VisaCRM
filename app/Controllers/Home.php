@@ -275,8 +275,15 @@ class Home extends BaseController
 
     // admin
     public function studentAnalysis()
-    {
-        return view('admin/studentanalysis');
+    {    $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+        $model1 = new StudentModel();
+        $coursedetails=$model1->getdetails();
+        $data['student']=$coursedetails;
+        return view('admin/studentanalysis',$data);
     }
     public function CounsellorDetails()
     {

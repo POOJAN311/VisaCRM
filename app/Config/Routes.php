@@ -40,6 +40,7 @@ $routes->get('/counsellor/AddStudent', 'Home::counsellorAddStudent', ['filter' =
 $routes->post('/counsellor/AddStudent', 'Home::counsellorAddStudent');
 
 $routes->get('/counsellor/Application', 'Home::counsellorApplication', ['filter' => 'auth']);
+$routes->post('/counsellor/Application/AddData', 'Home::AddData');
 $routes->get('/counsellor/CollegeSearch', 'Home::counsellorCollegeSearch', ['filter' => 'auth']);
 $routes->get('/counsellor/Leads', 'Home::counsellorLeads', ['filter' => 'auth']);
 $routes->match(['get', 'post'], '/counsellor/Leave', 'Home::counsellorLeave', ['filter' => 'auth']);

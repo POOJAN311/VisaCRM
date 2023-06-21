@@ -207,12 +207,11 @@
                                   <?php echo $details['map_loc']; ?>
                                 </td>
                                 <td>
-                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal">View</button>
+                              <a href="<?php echo base_url('admin/courselist/'.$details['id']) ?>"   class="btn btn-primary" 
+                                >View</a>
                               <div class="modal" id="myModal">
                                 <div class="modal-dialog modal-xl">
                                   <div class="modal-content">
-
                                     <!-- Modal Header -->
                                     <div class="modal-header">
                                       <h4 class="modal-title">Courses Details</h4>

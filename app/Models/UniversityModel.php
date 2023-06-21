@@ -25,7 +25,7 @@ class UniversityModel extends Model
       // echo $this->db->getLastQuery();
       //   print_r($data[0]);
       // return $this->orderBy('id','DESC')->findAll();
-      return $data[0];
+      return $data;
        
 
    }

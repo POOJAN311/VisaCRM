@@ -8,7 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php
+
+                                    use App\Controllers\Home;
+
+                                    echo base_url() ?>plugins/fontawesome-free/css/all.min.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="<?php echo base_url() ?>plugins/select2/css/select2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -305,219 +309,142 @@
                                     <div class="col-12">
 
                                         <!-- /.card -->
-
+                                        <?php if (!empty($session1)) { ?>
+                                            <div class="alert alert-success" id="alert" role="alert">
+                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                <strong>Data Added Successfully</strong>
+                                            </div>
+                                        <?php } ?>
                                         <div class="card">
                                             <div class="card-header">
-                                                <h3 class="card-title">DataTable with default features</h3>
+                                                <h3 class="card-title">Datatable for Documents</h3>
                                             </div>
                                             <!-- /.card-header -->
                                             <div class="card-body">
-                                                <table id="example1" class="table table-bordered table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Sr No.</th>
-                                                            <th>Document Name</th>
-                                                            <th>Action</th>
-                                                            <th>Date & Time</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>10th Marksheet
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
-
+                                                <form action="<?php echo base_url('counsellor/Application/AddData') ?>" method="post" enctype="multipart/form-data">
+                                                    <div class="form-group">
+                                                        <label>Status</label>
+                                                        <select class="form-control select2" name="Status" style="width: 100%;">
+                                                            <option value="Pending" selected="selected">Pending</option>
+                                                            <option value="Reviewing">Reviewing</option>
+                                                            <option value="Approved">Approved</option>
+                                                            <option value="Reuploadation">Need Reuploadation</option>
+                                                        </select>
+                                                    </div>
+                                                    <table id="example1" class="table table-bordered table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Sr No.</th>
+                                                                <th>Document Name</th>
+                                                                <th>Action</th>
+                                                                <th>Date & Time</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>10th Marksheet
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="userfile" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>12th Marksheet
-                                                            </td>
-                                                            <td> <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01 </td>
-                                                            <td>
-                                                                <form action="">
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>12th Marksheet
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="12th" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td> Graduation Marksheet (Only for Graduates)
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01 </td>
 
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3</td>
+                                                                <td> Graduation Marksheet (Only for Graduates)
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="grad_marksheet" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td> Letter of recommendation
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
+                                                            </tr>
+                                                            <tr>
+                                                                <td>4</td>
+                                                                <td> Letter of recommendation
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="LOR" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>5</td>
-                                                            <td> Essay 1 (SOP1)
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
+                                                            </tr>
+                                                            <tr>
+                                                                <td>5</td>
+                                                                <td> Essay 1 (SOP1)
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="SOP1" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>6</td>
-                                                            <td> Essay 2 (SOP2)
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
+                                                            </tr>
+                                                            <tr>
+                                                                <td>6</td>
+                                                                <td> Essay 2 (SOP2)
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="SOP2" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>7</td>
-                                                            <td> Financial Document
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
+                                                            </tr>
+                                                            <tr>
+                                                                <td>7</td>
+                                                                <td> Financial Document
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="Finance" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
-                                                        <tr>
-                                                            <td>9</td>
-                                                            <td> Work Experience Document (if Applicable)
-                                                            </td>
-                                                            <td>
-                                                                <input type="file" class="btn btn-block btn-primary ">
-                                                            </td>
-                                                            <td> Date: 20-08-2022 | Time: 12:22:01</td>
-                                                            <td>
-                                                                <form action="">
+                                                            </tr>
 
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td> Work Experience Document (if Applicable)
+                                                                </td>
+                                                                <td>
                                                                     <div class="form-group">
-                                                                        <label>Status</label>
-                                                                        <select class="form-control select2" style="width: 100%;">
-                                                                            <option selected="selected">Pending</option>
-                                                                            <option>Reviewing</option>
-                                                                            <option>Approved</option>
-                                                                            <option>Need Reuploadation</option>
-
-                                                                        </select>
+                                                                        <input type="file" name="Workexp" class="form-control">
                                                                     </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
+                                                                </td>
+                                                                <td> Date: 20-08-2022 | Time: 12:22:01</td>
 
-                                                    </tbody>
-                                                </table>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-outline-success">Submit</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                             <!-- /.card-body -->
                                         </div>

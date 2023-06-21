@@ -300,7 +300,15 @@ class Home extends BaseController
     // admin
     public function studentAnalysis()
     {
-        return view('admin/studentanalysis');
+        $session = \Config\Services::session();
+
+        helper('form');
+        $data = [];
+
+        $model1 = new StudentModel();
+        $coursedetails = $model1->getdetails();
+        $data['student'] = $coursedetails;
+        return view('admin/studentanalysis', $data);
     }
     public function CounsellorDetails()
     {
@@ -498,7 +506,20 @@ class Home extends BaseController
         }
         return view('admin/AddUniversity');
     }
+    public function courselist($id)
+    {
+        $session = \Config\Services::session();
 
+        helper('form');
+        $data = [];
+
+        $model1 = new UnicoursesModel();
+        $coursedetails = $model1->getcourse($id);
+        $data['courselist'] = $coursedetails;
+        // $course_criteria=$model1->getcoursecriteria($id);
+        // $data['course_criteria']=$course_criteria;
+        return view('admin/courselist', $data);
+    }
     public function UniversityList()
     {
         $session = \Config\Services::session();
